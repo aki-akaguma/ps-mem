@@ -1,0 +1,55 @@
+Name:	rsyslogd
+Umask:	0022
+State:	S (sleeping)
+Tgid:	1336
+Ngid:	0
+Pid:	1336
+PPid:	1
+TracerPid:	0
+Uid:	101	101	101	101
+Gid:	102	102	102	102
+FDSize:	128
+Groups:	4 5 102 
+NStgid:	1336
+NSpid:	1336
+NSpgid:	1336
+NSsid:	1336
+VmPeak:	  224532 kB
+VmSize:	  224532 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    5520 kB
+VmRSS:	    3816 kB
+RssAnon:	    1592 kB
+RssFile:	    2224 kB
+RssShmem:	       0 kB
+VmData:	   18676 kB
+VmStk:	     132 kB
+VmExe:	     468 kB
+VmLib:	    3692 kB
+VmPTE:	      76 kB
+VmSwap:	      20 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	4
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001206
+SigCgt:	0000000180314001
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	270
+nonvoluntary_ctxt_switches:	121

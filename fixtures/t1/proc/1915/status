@@ -1,0 +1,55 @@
+Name:	lpqd
+Umask:	0000
+State:	S (sleeping)
+Tgid:	1915
+Ngid:	0
+Pid:	1915
+PPid:	1899
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	 
+NStgid:	1915
+NSpid:	1915
+NSpgid:	1899
+NSsid:	1899
+VmPeak:	   51348 kB
+VmSize:	   51164 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   11920 kB
+VmRSS:	    5256 kB
+RssAnon:	    2008 kB
+RssFile:	    3232 kB
+RssShmem:	      16 kB
+VmData:	    1848 kB
+VmStk:	     132 kB
+VmExe:	      64 kB
+VmLib:	   21748 kB
+VmPTE:	     124 kB
+VmSwap:	     888 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000001880
+SigIgn:	0000000000001000
+SigCgt:	0000000180014461
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1548
+nonvoluntary_ctxt_switches:	3701

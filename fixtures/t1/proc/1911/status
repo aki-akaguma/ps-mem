@@ -1,0 +1,55 @@
+Name:	smbd-notifyd
+Umask:	0000
+State:	S (sleeping)
+Tgid:	1911
+Ngid:	0
+Pid:	1911
+PPid:	1899
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	 
+NStgid:	1911
+NSpid:	1911
+NSpgid:	1899
+NSsid:	1899
+VmPeak:	   49980 kB
+VmSize:	   49980 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    5688 kB
+VmRSS:	    1744 kB
+RssAnon:	    1744 kB
+RssFile:	       0 kB
+RssShmem:	       0 kB
+VmData:	    1612 kB
+VmStk:	     132 kB
+VmExe:	      64 kB
+VmLib:	   21512 kB
+VmPTE:	     120 kB
+VmSwap:	     932 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000001a80
+SigIgn:	0000000000001000
+SigCgt:	0000000180010461
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	4743
+nonvoluntary_ctxt_switches:	40

@@ -1,0 +1,55 @@
+Name:	systemd-network
+Umask:	0022
+State:	S (sleeping)
+Tgid:	1235
+Ngid:	0
+Pid:	1235
+PPid:	1
+TracerPid:	0
+Uid:	129	129	129	129
+Gid:	140	140	140	140
+FDSize:	64
+Groups:	140 
+NStgid:	1235
+NSpid:	1235
+NSpgid:	1235
+NSsid:	1235
+VmPeak:	   35076 kB
+VmSize:	   35076 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    7784 kB
+VmRSS:	    3604 kB
+RssAnon:	     952 kB
+RssFile:	    2652 kB
+RssShmem:	       0 kB
+VmData:	   17044 kB
+VmStk:	     132 kB
+VmExe:	    1512 kB
+VmLib:	    8676 kB
+VmPTE:	      76 kB
+VmSwap:	       8 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000004802
+SigIgn:	0000000000001000
+SigCgt:	0000000180000000
+CapInh:	0000000000003c00
+CapPrm:	0000000000003c00
+CapEff:	0000000000003c00
+CapBnd:	0000000000003c00
+CapAmb:	0000000000003c00
+NoNewPrivs:	1
+Seccomp:	2
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	12444
+nonvoluntary_ctxt_switches:	1929

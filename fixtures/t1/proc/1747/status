@@ -1,0 +1,55 @@
+Name:	nmbd
+Umask:	0000
+State:	S (sleeping)
+Tgid:	1747
+Ngid:	0
+Pid:	1747
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	 
+NStgid:	1747
+NSpid:	1747
+NSpgid:	1747
+NSsid:	1747
+VmPeak:	   37796 kB
+VmSize:	   37796 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   14088 kB
+VmRSS:	    5928 kB
+RssAnon:	    2140 kB
+RssFile:	    3784 kB
+RssShmem:	       4 kB
+VmData:	    1380 kB
+VmStk:	     132 kB
+VmExe:	     160 kB
+VmLib:	   15664 kB
+VmPTE:	     108 kB
+VmSwap:	      44 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000001880
+SigIgn:	0000000000001000
+SigCgt:	0000000180014461
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	17630
+nonvoluntary_ctxt_switches:	2658

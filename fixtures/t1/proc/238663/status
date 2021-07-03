@@ -1,0 +1,55 @@
+Name:	cupsd
+Umask:	0022
+State:	S (sleeping)
+Tgid:	238663
+Ngid:	0
+Pid:	238663
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	 
+NStgid:	238663
+NSpid:	238663
+NSpgid:	238663
+NSsid:	238663
+VmPeak:	  169396 kB
+VmSize:	  103864 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    9892 kB
+VmRSS:	    4884 kB
+RssAnon:	    2104 kB
+RssFile:	    2780 kB
+RssShmem:	       0 kB
+VmData:	   16280 kB
+VmStk:	     136 kB
+VmExe:	     348 kB
+VmLib:	    8288 kB
+VmPTE:	      84 kB
+VmSwap:	       4 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	2
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180014001
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	538
+nonvoluntary_ctxt_switches:	198

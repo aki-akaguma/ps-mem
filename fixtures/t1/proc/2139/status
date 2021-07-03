@@ -1,0 +1,55 @@
+Name:	upowerd
+Umask:	0022
+State:	S (sleeping)
+Tgid:	2139
+Ngid:	0
+Pid:	2139
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	 
+NStgid:	2139
+NSpid:	2139
+NSpgid:	2139
+NSsid:	2139
+VmPeak:	  253508 kB
+VmSize:	  253452 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   10136 kB
+VmRSS:	    2660 kB
+RssAnon:	    1472 kB
+RssFile:	    1188 kB
+RssShmem:	       0 kB
+VmData:	   34312 kB
+VmStk:	     132 kB
+VmExe:	     184 kB
+VmLib:	    8916 kB
+VmPTE:	     112 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	3
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180000002
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000000000000000
+CapAmb:	0000000000000000
+NoNewPrivs:	1
+Seccomp:	2
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	208
+nonvoluntary_ctxt_switches:	1158

@@ -1,0 +1,71 @@
+[package]
+name = "ps-mem"
+version = "0.2.5"
+authors = ["aki <aki.akaguma@hotmail.com>"]
+description = """
+The process memory size listing
+"""
+keywords = ["memory", "command", "linux"]
+categories = ["command-line-interface"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+build = "build.rs"
+edition = "2018"
+repository = "https://github.com/aki-akaguma/ps-mem"
+
+[lib]
+name = "libps_mem"
+path = "src/lib.rs"
+crate-type = ["lib"]
+
+[[bin]]
+name = "ps-mem"
+path = "src/main.rs"
+bench = false
+
+[[test]]
+name = "integration"
+path = "tests/test.rs"
+
+[features]
+default = []
+debian_build = []
+
+[dependencies]
+anyhow = "1.0"
+flood-tide = { version="0.2", default-features=true, features=["stop_at_mm"] }
+runnel = "0.3"
+memx-cdy = "0.1"
+
+num-format = "0.4"
+signal-hook = "0.3"
+linux-procfs = { version = "0.3", default-features=false, features=["has_pidentry_status_state", "has_pidentry_status_vm_hwm"] }
+
+[dev-dependencies]
+assert-text = "0.2"
+exec-target = "0.2"
+regex = "1.5"
+
+[build-dependencies]
+rust-version-info-file = "0.1"
+
+[workspace]
+members = [
+    "xtask",
+]
+
+[package.metadata.deb]
+features = ["debian_build"]
+section = "AAA-admin"
+priority = "optional"
+maintainer = "aki <aki.akaguma@hotmail.com>"
+extended-description = """\
+The process memory size listing
+"""
+depends = "$auto"
+separate-debug-symbols = true
+assets = [
+    ["target/release/ps-mem", "usr/sbin/", "755"],
+    ["target/rust-version-info.txt", "usr/share/doc/ps-mem/", "644"],
+    ["README.md", "usr/share/doc/ps-mem/", "644"],
+]

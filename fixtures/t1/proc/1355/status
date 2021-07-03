@@ -1,0 +1,55 @@
+Name:	wpa_supplicant
+Umask:	0022
+State:	S (sleeping)
+Tgid:	1355
+Ngid:	0
+Pid:	1355
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	 
+NStgid:	1355
+NSpid:	1355
+NSpgid:	1355
+NSsid:	1355
+VmPeak:	   13732 kB
+VmSize:	   13672 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    5032 kB
+VmRSS:	    1476 kB
+RssAnon:	     588 kB
+RssFile:	     888 kB
+RssShmem:	       0 kB
+VmData:	     372 kB
+VmStk:	     132 kB
+VmExe:	    1912 kB
+VmLib:	    6328 kB
+VmPTE:	      64 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000190004003
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	14268
+nonvoluntary_ctxt_switches:	123

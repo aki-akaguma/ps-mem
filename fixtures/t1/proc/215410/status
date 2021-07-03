@@ -1,0 +1,55 @@
+Name:	lightdm
+Umask:	0002
+State:	S (sleeping)
+Tgid:	215410
+Ngid:	0
+Pid:	215410
+PPid:	1466
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	4 20 21 24 25 26 29 30 44 46 103 104 115 120 121 122 125 125 1000 
+NStgid:	215410
+NSpid:	215410
+NSpgid:	1466
+NSsid:	1466
+VmPeak:	  229852 kB
+VmSize:	  164464 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   10372 kB
+VmRSS:	    3128 kB
+RssAnon:	       0 kB
+RssFile:	    3128 kB
+RssShmem:	       0 kB
+VmData:	   17948 kB
+VmStk:	     268 kB
+VmExe:	     188 kB
+VmLib:	    9280 kB
+VmPTE:	      84 kB
+VmSwap:	    1832 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	3
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001001
+SigCgt:	0000000180004000
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	89
+nonvoluntary_ctxt_switches:	104

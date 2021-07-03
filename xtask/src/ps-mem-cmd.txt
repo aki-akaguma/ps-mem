@@ -1,0 +1,9 @@
+Options:
+  -a, --all             all pid (include kernel threads)
+  --sort <order>        sort by <order>: rss|swap|total
+  --pid <number>        output only selected pid
+  --sleep <number>      sleep <number> milli second
+
+  -H, --help        display this help and exit
+  -V, --version     display version information and exit
+  -X <x-options>    x options. try -X help

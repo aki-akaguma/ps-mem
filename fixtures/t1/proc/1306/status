@@ -1,0 +1,55 @@
+Name:	networkd-dispat
+Umask:	0022
+State:	S (sleeping)
+Tgid:	1306
+Ngid:	0
+Pid:	1306
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	 
+NStgid:	1306
+NSpid:	1306
+NSpgid:	1306
+NSsid:	1306
+VmPeak:	   40916 kB
+VmSize:	   40916 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   20872 kB
+VmRSS:	    3976 kB
+RssAnon:	    1480 kB
+RssFile:	    2496 kB
+RssShmem:	       0 kB
+VmData:	    8520 kB
+VmStk:	     132 kB
+VmExe:	    2748 kB
+VmLib:	   11176 kB
+VmPTE:	     100 kB
+VmSwap:	    7104 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000002
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	111
+nonvoluntary_ctxt_switches:	341

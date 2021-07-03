@@ -1,0 +1,55 @@
+Name:	libvirtd
+Umask:	0022
+State:	S (sleeping)
+Tgid:	1439
+Ngid:	0
+Pid:	1439
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	 
+NStgid:	1439
+NSpid:	1439
+NSpgid:	1439
+NSsid:	1439
+VmPeak:	 1561092 kB
+VmSize:	 1560900 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   40412 kB
+VmRSS:	    8140 kB
+RssAnon:	    5136 kB
+RssFile:	    3004 kB
+RssShmem:	       0 kB
+VmData:	  291576 kB
+VmStk:	     924 kB
+VmExe:	     336 kB
+VmLib:	   36856 kB
+VmPTE:	     344 kB
+VmSwap:	    5648 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	17
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180004007
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	11054
+nonvoluntary_ctxt_switches:	8126

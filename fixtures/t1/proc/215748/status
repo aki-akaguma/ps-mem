@@ -1,0 +1,55 @@
+Name:	panel-20-pulsea
+Umask:	0002
+State:	S (sleeping)
+Tgid:	215748
+Ngid:	0
+Pid:	215748
+PPid:	215710
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	64
+Groups:	4 20 21 24 25 26 29 30 44 46 103 104 115 120 121 122 125 125 1000 
+NStgid:	215748
+NSpid:	215748
+NSpgid:	215515
+NSsid:	215515
+VmPeak:	  726104 kB
+VmSize:	  726104 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	   62748 kB
+VmRSS:	   44568 kB
+RssAnon:	   21184 kB
+RssFile:	   23240 kB
+RssShmem:	     144 kB
+VmData:	   48160 kB
+VmStk:	     132 kB
+VmExe:	      24 kB
+VmLib:	   27028 kB
+VmPTE:	     388 kB
+VmSwap:	   12032 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	3
+SigQ:	1/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	463292
+nonvoluntary_ctxt_switches:	189501

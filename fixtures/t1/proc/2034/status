@@ -1,0 +1,55 @@
+Name:	master
+Umask:	0077
+State:	S (sleeping)
+Tgid:	2034
+Ngid:	0
+Pid:	2034
+PPid:	1
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	128
+Groups:	0 
+NStgid:	2034
+NSpid:	2034
+NSpgid:	2034
+NSsid:	2034
+VmPeak:	   38332 kB
+VmSize:	   38140 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    3640 kB
+VmRSS:	    2260 kB
+RssAnon:	     472 kB
+RssFile:	    1788 kB
+RssShmem:	       0 kB
+VmData:	     472 kB
+VmStk:	     132 kB
+VmExe:	      32 kB
+VmLib:	    6080 kB
+VmPTE:	      64 kB
+VmSwap:	      28 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	000000018001644f
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	5635
+nonvoluntary_ctxt_switches:	500

@@ -1,0 +1,55 @@
+Name:	cp
+Umask:	0022
+State:	R (running)
+Tgid:	475983
+Ngid:	0
+Pid:	475983
+PPid:	475982
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	0 
+NStgid:	475983
+NSpid:	475983
+NSpgid:	472937
+NSsid:	464373
+VmPeak:	   10368 kB
+VmSize:	   10368 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	     936 kB
+VmRSS:	     936 kB
+RssAnon:	     128 kB
+RssFile:	     808 kB
+RssShmem:	       0 kB
+VmData:	     384 kB
+VmStk:	     132 kB
+VmExe:	     112 kB
+VmLib:	    2240 kB
+VmPTE:	      52 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	0/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000003fffffffff
+CapEff:	0000003fffffffff
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	0
+nonvoluntary_ctxt_switches:	5

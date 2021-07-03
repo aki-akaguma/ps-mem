@@ -1,0 +1,55 @@
+Name:	(sd-pam)
+Umask:	0002
+State:	S (sleeping)
+Tgid:	215444
+Ngid:	0
+Pid:	215444
+PPid:	215438
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	64
+Groups:	 
+NStgid:	215444
+NSpid:	215444
+NSpgid:	215438
+NSsid:	215438
+VmPeak:	  174132 kB
+VmSize:	  174132 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    4424 kB
+VmRSS:	     792 kB
+RssAnon:	     792 kB
+RssFile:	       0 kB
+RssShmem:	       0 kB
+VmData:	   20648 kB
+VmStk:	     272 kB
+VmExe:	     940 kB
+VmLib:	   11624 kB
+VmPTE:	     108 kB
+VmSwap:	    4016 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+Threads:	1
+SigQ:	1/31609
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
