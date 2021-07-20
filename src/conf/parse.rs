@@ -24,7 +24,7 @@ const EXAMPLES_TEXT: &str = r#"Examples:
   Show one prosess memory:
     ps-mem --pid 1234
   Show invoked one prosess memory:
-    ps-mem find / -type f
+    ps-mem -- find / -type f
 "#;
 //}}} TEXT
 
@@ -97,6 +97,7 @@ pub fn parse_cmdopts(a_prog_name: &str, args: &[&str]) -> Result<CmdOptConf, Opt
     //
     let mut conf = CmdOptConf {
         prog_name: a_prog_name.to_string(),
+        opt_sleep: 10,
         ..Default::default()
     };
     let (opt_free, r_errs) =

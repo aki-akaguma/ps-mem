@@ -13,9 +13,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.41"
+version = "1.0.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "15af2628f6890fe2609a3b91bef4c83450512802e59489f9c1cb1fa5df064a61"
+checksum = "595d3cfa7a60d4555cb5067b99f07142a08ea778de5cf993f7b75c7d8fabc486"
 
 [[package]]
 name = "arrayvec"
@@ -78,6 +78,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "indoc"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e5a75aeaaef0ce18b58056d306c27b07436fbb34b8816c53094b76dd81803136"
+dependencies = [
+ "unindent",
+]
+
+[[package]]
 name = "itoa"
 version = "0.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -85,15 +94,15 @@ checksum = "dd25036021b0de88a0aff6b850051563c6516d0bf53f8638938edbb9de732736"
 
 [[package]]
 name = "libc"
-version = "0.2.97"
+version = "0.2.98"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12b8adadd720df158f4d70dfe7ccc6adb0472d7c55ca83445f6a5ab3e36f8fb6"
+checksum = "320cfe77175da3a483efed4bc0adc1968ca050b098ce4f2f1c13a56626128790"
 
 [[package]]
 name = "linux-procfs"
-version = "0.3.6"
+version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f6d70a8005ce62703fc58738074e2c0093e82d4ef1f5a438b2d64f353569e16"
+checksum = "68cbcfe3abfb4c06b7d7b50ff28f585b3f989bb3f0a732583e0985c04c3a2135"
 dependencies = [
  "cfg-iif",
  "memx",
@@ -108,15 +117,18 @@ checksum = "b16bd47d9e329435e309c58469fe0791c2d0d1ba96ec0954152a5ae2b04387dc"
 
 [[package]]
 name = "memx"
-version = "0.1.13"
+version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b57f5c936db7b3458a50f4d44eb8f218977eca59ebaf314e1d61268042780a33"
+checksum = "daea4f23504b892eb645d531edb3b45fcca3f741c760b3fb55f179410d9fc355"
+dependencies = [
+ "rustc_version",
+]
 
 [[package]]
 name = "memx-cdy"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05f74c36dd09763b354395e8419a1961732f8e3af0c4fb05c329e53d7312099f"
+checksum = "8d219f7c9d71f90e784f333eac8dabb9889f19531b7dbda90e2a19b3bed3f12e"
 dependencies = [
  "libc",
  "memx",
@@ -124,9 +136,9 @@ dependencies = [
 
 [[package]]
 name = "naive_opt"
-version = "0.1.12"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e0eed2b1588a9d247353860ae72b6adbd975eaa146ccf6b2e67fbedda19569d"
+checksum = "ae8532d125e6e910016e4ce5de65dc4836864fd417fa2f9026fe914c8a5a7c67"
 dependencies = [
  "memx",
 ]
@@ -149,12 +161,13 @@ dependencies = [
 
 [[package]]
 name = "ps-mem"
-version = "0.2.5"
+version = "0.2.6"
 dependencies = [
  "anyhow",
  "assert-text",
  "exec-target",
  "flood-tide",
+ "indoc",
  "linux-procfs",
  "memx-cdy",
  "num-format",
@@ -229,6 +242,12 @@ checksum = "e51e73328dc4ac0c7ccbda3a494dfa03df1de2f46018127f60c693f2648455b0"
 dependencies = [
  "libc",
 ]
+
+[[package]]
+name = "unindent"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f14ee04d9415b52b3aeab06258a3f07093182b88ba0f9b8d203f211a7a7d41c7"
 
 [[package]]
 name = "xtask"

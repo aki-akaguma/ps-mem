@@ -2,6 +2,15 @@ TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.2.6 (2021-07-21)
+=====
+
+* fix bug: conf.opt_sleep: default sleep msec is more zero
+* add depends: indoc(1.0.3)
+* update depends: linux-procfs(0.3.7), memx-cdy(0.1.4)
+* update depends: memx(0.1.14), naive_opt(0.1.13)
+* update depends: anyhow(1.0.42)
+
 0.2.5 (2021-07-03)
 =====
 

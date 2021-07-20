@@ -1,11 +1,3 @@
-extern crate exec_target;
-
-//use exec_target::exec_target;
-//use exec_target::args_from;
-
-//use std::fs;
-//use std::io::Read;
-
 const TARGET_EXE_PATH: &'static str = env!(concat!("CARGO_BIN_EXE_", env!("CARGO_PKG_NAME")));
 
 macro_rules! help_msg {
@@ -13,30 +5,34 @@ macro_rules! help_msg {
         concat!(
             version_msg!(),
             "\n",
-            "Usage:\n",
-            "  ps-mem [options]\n",
-            "  ps-mem [options] <command> {<arg1> <arg2> ...}\n",
-            "\n",
-            "print processes memory by sort,\n",
-            "or print one processe memory\n",
-            "\n",
-            "Options:\n",
-            "  -a, --all             all pid (include kernel threads)\n",
-            "  --sort <order>        sort by <order>: rss|swap|total\n",
-            "  --pid <number>        output only selected pid\n",
-            "  --sleep <number>      sleep <number> milli second\n",
-            "\n",
-            "  -H, --help        display this help and exit\n",
-            "  -V, --version     display version information and exit\n",
-            "  -X <x-options>    x options. try -X help\n",
-            "\n",
-            "Examples:\n",
-            "  Show all prosesses memory:\n",
-            "    ps-mem --all\n",
-            "  Show one prosess memory:\n",
-            "    ps-mem --pid 1234\n",
-            "  Show invoked one prosess memory:\n",
-            "    ps-mem find / -type f\n",
+            indoc::indoc!(
+                r#"
+            Usage:
+              ps-mem [options]
+              ps-mem [options] <command> {<arg1> <arg2> ...}
+
+            print processes memory by sort,
+            or print one processe memory
+
+            Options:
+              -a, --all             all pid (include kernel threads)
+              --sort <order>        sort by <order>: rss|swap|total
+              --pid <number>        output only selected pid
+              --sleep <number>      sleep <number> milli second
+
+              -H, --help        display this help and exit
+              -V, --version     display version information and exit
+              -X <x-options>    x options. try -X help
+
+            Examples:
+              Show all prosesses memory:
+                ps-mem --all
+              Show one prosess memory:
+                ps-mem --pid 1234
+              Show invoked one prosess memory:
+                ps-mem -- find / -type f
+            "#
+            ),
             "\n",
         )
     };

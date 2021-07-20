@@ -36,7 +36,7 @@ Examples:
   Show one prosess memory:
     ps-mem --pid 1234
   Show invoked one prosess memory:
-    ps-mem find / -type f
+    ps-mem -- find / -type f
 ```
 
 ### Quick install
