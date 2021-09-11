@@ -142,5 +142,5 @@ pub fn execute_env(
             return Err(anyhow!("{}\n{}", errs, TRY_HELP_MSG));
         }
     };
-    run::run(sioe, &conf, &env)
+    run::run(sioe, &conf, env)
 }

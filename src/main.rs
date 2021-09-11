@@ -3,8 +3,9 @@ use runnel::RunnelIoeBuilder;
 use std::io::Write;
 
 fn main() {
-    memx_cdy::memx_init(); // fast mem operation.
-
+    // fast mem operation.
+    memx_cdy::memx_init();
+    //
     let mut env_args: Vec<String> = std::env::args().collect();
     let _program = env_args.remove(0);
     let program = env!("CARGO_PKG_NAME");
@@ -12,7 +13,7 @@ fn main() {
     //
     let sioe = RunnelIoeBuilder::new().build();
     //
-    match execute(&sioe, &program, &env_args) {
+    match execute(&sioe, program, &env_args) {
         Ok(_) => {}
         Err(err) => {
             #[rustfmt::skip]

@@ -13,9 +13,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.42"
+version = "1.0.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "595d3cfa7a60d4555cb5067b99f07142a08ea778de5cf993f7b75c7d8fabc486"
+checksum = "28ae2b3dec75a406790005a200b1bd89785afc02517a00ca99ecfe093ee9e6cf"
 
 [[package]]
 name = "arrayvec"
@@ -62,15 +62,15 @@ checksum = "d73ed2ad216050660455ff4cb0820c7698f1031b67222c4c88dc331eaee1765a"
 
 [[package]]
 name = "flood-tide"
-version = "0.2.2"
+version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f193b6cb27c033164f6d435042aaa7c192cc293ff3640daa4648ffa422aca88"
+checksum = "bf606bd9abc64164f0d0a2f302017812968dff13d3c42597b5be8b5874291eb6"
 
 [[package]]
 name = "flood-tide-gen"
-version = "0.1.13"
+version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b65d44c4cfa45352a93e95cb0ba505671d49f0533fd56436abafbddc62d4b1d"
+checksum = "866754df359951743e7157a0b968db434d6939e034b1ad2b18fad13b41ff0e71"
 dependencies = [
  "anyhow",
  "case",
@@ -88,21 +88,21 @@ dependencies = [
 
 [[package]]
 name = "itoa"
-version = "0.4.7"
+version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dd25036021b0de88a0aff6b850051563c6516d0bf53f8638938edbb9de732736"
+checksum = "b71991ff56294aa922b450139ee08b3bfc70982c6b2c7562771375cf73542dd4"
 
 [[package]]
 name = "libc"
-version = "0.2.98"
+version = "0.2.101"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "320cfe77175da3a483efed4bc0adc1968ca050b098ce4f2f1c13a56626128790"
+checksum = "3cb00336871be5ed2c8ed44b60ae9959dc5b9f08539422ed43f09e34ecaeba21"
 
 [[package]]
 name = "linux-procfs"
-version = "0.3.7"
+version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68cbcfe3abfb4c06b7d7b50ff28f585b3f989bb3f0a732583e0985c04c3a2135"
+checksum = "e5c54dfbef28fb974a9134388c1ed8bd681dc9e0bacae0560f415d056b4c5588"
 dependencies = [
  "cfg-iif",
  "memx",
@@ -111,24 +111,24 @@ dependencies = [
 
 [[package]]
 name = "memchr"
-version = "2.4.0"
+version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b16bd47d9e329435e309c58469fe0791c2d0d1ba96ec0954152a5ae2b04387dc"
+checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 
 [[package]]
 name = "memx"
-version = "0.1.14"
+version = "0.1.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "daea4f23504b892eb645d531edb3b45fcca3f741c760b3fb55f179410d9fc355"
+checksum = "0c2c720f4fef3f1107b4b6427b346cd8ec6b2f0d667862294ba3427b3d669c5a"
 dependencies = [
  "rustc_version",
 ]
 
 [[package]]
 name = "memx-cdy"
-version = "0.1.4"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d219f7c9d71f90e784f333eac8dabb9889f19531b7dbda90e2a19b3bed3f12e"
+checksum = "524a1c301384feca56f94572e21fb6c1d341deac257b8b72c815426e0112c4d0"
 dependencies = [
  "libc",
  "memx",
@@ -136,9 +136,9 @@ dependencies = [
 
 [[package]]
 name = "naive_opt"
-version = "0.1.13"
+version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae8532d125e6e910016e4ce5de65dc4836864fd417fa2f9026fe914c8a5a7c67"
+checksum = "9f8ef077eed859b87ccd0701d3b4fc394c7ecbed8c3c750933c381dc0ef4bf12"
 dependencies = [
  "memx",
 ]
@@ -161,7 +161,7 @@ dependencies = [
 
 [[package]]
 name = "ps-mem"
-version = "0.2.6"
+version = "0.2.7"
 dependencies = [
  "anyhow",
  "assert-text",
@@ -196,9 +196,9 @@ checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
 
 [[package]]
 name = "runnel"
-version = "0.3.7"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41ff2ffcc2fd811cdd9b109a45d29fa013c59fb51f16112d9c9fceba73f53803"
+checksum = "074a714a77f8719d5e852029edc5878e628fcd64838f078460fc31afcd00fdb9"
 dependencies = [
  "rustc_version",
 ]
@@ -220,15 +220,15 @@ dependencies = [
 
 [[package]]
 name = "semver"
-version = "1.0.3"
+version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f3aac57ee7f3272d8395c6e4f502f434f0e289fcd62876f70daa008c20dcabe"
+checksum = "568a8e6258aa33c13358f81fd834adb854c6f7c9468520910a9b1e8fac068012"
 
 [[package]]
 name = "signal-hook"
-version = "0.3.9"
+version = "0.3.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "470c5a6397076fae0094aaf06a08e6ba6f37acb77d3b1b91ea92b4d6c8650c39"
+checksum = "9c98891d737e271a2954825ef19e46bd16bdb98e2746f2eec4f7a4ef7946efd1"
 dependencies = [
  "libc",
  "signal-hook-registry",
