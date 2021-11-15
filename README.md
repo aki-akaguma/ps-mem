@@ -4,7 +4,9 @@ The process memory size listing.
 
 `ps-mem` command is listing all process memory size.
 
-* minimum support rustc 1.46.0 (04488afe3 2020-08-24)
+## Feature
+
+- minimum support rustc 1.47.0 (18bf6b4f0 2020-10-07)
 
 ## Command help
 
@@ -39,7 +41,7 @@ Examples:
     ps-mem -- find / -type f
 ```
 
-### Quick install
+## Quick install
 
 1. you can install this into cargo bin path:
 
@@ -56,15 +58,15 @@ cargo deb
 and install **.deb** into your local repository of debian package.
 
 
-### Examples
+## Examples
 
-#### Example 1: simple
+### Example 1: simple
 
 ```
 sudo ps-mem
 ```
 
-#### Example 2: the largest finder
+### Example 2: the largest finder
 
 you can see a largest memory process.
 
@@ -78,7 +80,7 @@ or
 sudo ps-mem --sort=total | aki-unbody -t 10
 ```
 
-#### Example 3: show one process memory
+### Example 3: show one process memory
 
 You see the process memory size of that pid is 1234.
 
@@ -86,7 +88,7 @@ You see the process memory size of that pid is 1234.
 ps-mem --pid 1234
 ```
 
-#### Example 4: show invoked one prosess memory
+### Example 4: show invoked one prosess memory
 
 You see the process memory size of the invoked find command.
 

@@ -2,6 +2,15 @@ TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.2.8 (2021-11-15)
+=====
+
+* minimum support rustc 1.47.0 (18bf6b4f0 2020-10-07)
+* add more documents
+* update depends: flood-tide(0.2.4), linux-procfs(0.3.10), cfg-iif(0.2.2), memx(0.1.18), memx-cdy(0.1.7), naive_opt(0.1.16), runnel(0.3.9)
+* update depends: assert-text(0.2.59), exec-target(0.2.4), flood-tide-gen(0.1.15)
+* update depends: anyhow(1.0.45), libc(0.2.107)
+
 0.2.7 (2021-09-11)
 =====
 
