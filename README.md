@@ -27,6 +27,7 @@ Options:
   --sort <order>        sort by <order>: rss|swap|total
   --pid <number>        output only selected pid
   --sleep <number>      sleep <number> milli second
+  -l, --cmdline         view command line
 
   -H, --help        display this help and exit
   -V, --version     display version information and exit
@@ -37,7 +38,7 @@ Examples:
     ps-mem --all
   Show one prosess memory:
     ps-mem --pid 1234
-  Show invoked one prosess memory:
+  Invoke and show one prosess memory:
     ps-mem -- find / -type f
 ```
 

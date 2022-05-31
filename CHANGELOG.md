@@ -2,6 +2,11 @@ TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.2.10 (2022-05-31)
+=====
+
+* add args: '-l, --cmdline' view command line
+
 0.2.9 (2022-05-22)
 =====
 

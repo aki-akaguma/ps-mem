@@ -43,9 +43,16 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
             Some(a) => a,
             None => continue,
         };
-        let pid_cmdline = match sys.get_pidentry_comm(pid) {
-            Some(a) => a,
-            None => continue,
+        let pid_cmdline = if conf.flg_cmdline {
+            match sys.get_pidentry_cmdline(pid) {
+                Some(a) => a,
+                None => continue,
+            }
+        } else {
+            match sys.get_pidentry_comm(pid) {
+                Some(a) => a,
+                None => continue,
+            }
         };
         //
         if !conf.flg_all && pid_status.state != b'Z' && pid_status.vm_size == 0 {
@@ -139,14 +146,15 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
 }
 
 fn do_proc_out_list(
-    _conf: &CmdOptConf,
+    conf: &CmdOptConf,
     procs: &[ProcsRec],
     wrt: &mut dyn Write,
 ) -> anyhow::Result<()> {
+    let comm = if conf.flg_cmdline { "COMMAND" } else { "COMM" };
     writeln!(
         wrt,
         "{:>7} - {:>9}   {:>9}   {:>9}   - {:<}",
-        "PID", "RSS", "SWAP", "TOTAL", "COMM",
+        "PID", "RSS", "SWAP", "TOTAL", comm,
     )?;
     for rec in procs {
         writeln!(

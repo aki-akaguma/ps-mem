@@ -12,6 +12,9 @@ match CmdOp::from(nv.opt.num) {
     CmdOp::Sleep => {
         conf.opt_sleep = value_to_u32(nv)?;
     }
+    CmdOp::Cmdline => {
+        conf.flg_cmdline = true;
+    }
     CmdOp::Help => {
         conf.flg_help = true;
     }

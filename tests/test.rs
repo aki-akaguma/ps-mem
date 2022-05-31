@@ -19,6 +19,7 @@ macro_rules! help_msg {
               --sort <order>        sort by <order>: rss|swap|total
               --pid <number>        output only selected pid
               --sleep <number>      sleep <number> milli second
+              -l, --cmdline         view command line
 
               -H, --help        display this help and exit
               -V, --version     display version information and exit
@@ -67,8 +68,16 @@ macro_rules! result_1_msg {
         r"    PID -       RSS        SWAP       TOTAL   - COMM
 "
     };
+    (head, cmdline) => {
+        r"    PID -       RSS        SWAP       TOTAL   - COMMAND
+"
+    };
     (1794) => {
         r"   1794 -     6,200Ki       420Ki     6,620Ki - winbindd
+"
+    };
+    (1794, cmdline) => {
+        r"   1794 -     6,200Ki       420Ki     6,620Ki - /usr/sbin/winbindd --foreground --no-process-group
 "
     };
     (all) => {
@@ -528,6 +537,19 @@ mod test_1 {
         assert_text_eq!(
             oup.stdout,
             concat!(result_1_msg!(head), result_1_msg!(1794))
+        );
+        assert_eq!(oup.status.success(), true);
+    }
+    #[test]
+    fn test_t4() {
+        let oup = exec_target(
+            TARGET_EXE_PATH,
+            &["-X", concat!("base_dir=", fixtures_1!()), "--pid=1794", "--cmdline"],
+        );
+        assert_eq!(oup.stderr, "");
+        assert_text_eq!(
+            oup.stdout,
+            concat!(result_1_msg!(head, cmdline), result_1_msg!(1794, cmdline))
         );
         assert_eq!(oup.status.success(), true);
     }
