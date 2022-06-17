@@ -1,6 +1,6 @@
 [package]
 name = "ps-mem"
-version = "0.2.10"
+version = "0.2.11"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 description = """
 The process memory size listing
@@ -10,7 +10,7 @@ categories = ["command-line-interface"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 build = "build.rs"
-edition = "2018"
+edition = "2021"
 repository = "https://github.com/aki-akaguma/ps-mem"
 
 [lib]

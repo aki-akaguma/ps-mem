@@ -1,6 +1,16 @@
-TBD
+TBD: ps-mem
 ===
 Unreleased changes. Release notes have not yet been written.
+
+0.2.11 (2022-06-18)
+=====
+
+* changes to edition 2021
+* update depends: cfg-iif(0.2.3), flood-tide(0.2.5), linux-procfs(0.3.11)
+* update depends: memx(0.1.21), memx-cdy(0.1.8), naive_opt(0.1.18), runnel(0.3.11)
+* update depends: assert-text(0.2.6), exec-target(v0.2.6), flood-tide-gen(0.1.16)
+* update depends: rust-version-info-file(v0.1.6)
+* update depends: semver(1.0.10)
 
 0.2.10 (2022-05-31)
 =====
