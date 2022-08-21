@@ -1,5 +1,5 @@
 //{{{ OptSortOrder
-#[derive(Debug, PartialEq, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OptSortOrder {
     Empty = 0,
     Swap,
