@@ -424,6 +424,7 @@ macro_rules! result_1_msg {
  459054 -   833,040Ki         0Ki   833,040Ki - MainThread
  462847 -   936,284Ki         0Ki   936,284Ki - chrome
  233231 - 1,176,272Ki    99,792Ki 1,276,064Ki - MainThread
+    Sum - 8,039,024Ki   722,940Ki 8,761,964Ki -
 "
     };
 }
@@ -544,7 +545,12 @@ mod test_1 {
     fn test_t4() {
         let oup = exec_target(
             TARGET_EXE_PATH,
-            &["-X", concat!("base_dir=", fixtures_1!()), "--pid=1794", "--cmdline"],
+            &[
+                "-X",
+                concat!("base_dir=", fixtures_1!()),
+                "--pid=1794",
+                "--cmdline",
+            ],
         );
         assert_eq!(oup.stderr, "");
         assert_text_eq!(

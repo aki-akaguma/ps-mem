@@ -2,6 +2,7 @@ TBD: ps-mem
 ===
 Unreleased changes. Release notes have not yet been written.
 
+* add total sum print
 * fix clippy: you are deriving `PartialEq` and can implement `Eq`
 * update depends: flood-tide-gen(0.1.17)
 * update depends: anyhow(1.0.62), libc(0.2.132), regex(1.6.0)

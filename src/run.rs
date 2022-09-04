@@ -151,6 +151,9 @@ fn do_proc_out_list(
     wrt: &mut dyn Write,
 ) -> anyhow::Result<()> {
     let comm = if conf.flg_cmdline { "COMMAND" } else { "COMM" };
+    let mut sum_rss = 0;
+    let mut sum_swap = 0;
+    let mut sum_total = 0;
     writeln!(
         wrt,
         "{:>7} - {:>9}   {:>9}   {:>9}   - {:<}",
@@ -165,7 +168,22 @@ fn do_proc_out_list(
             rec.swap.to_formatted_string(&Locale::en),
             rec.total.to_formatted_string(&Locale::en),
             rec.command
-        )?
+        )?;
+        if conf.opt_pid == 0 {
+            sum_rss += rec.rss;
+            sum_swap += rec.swap;
+            sum_total += rec.total;
+        }
+    }
+    if conf.opt_pid == 0 {
+        writeln!(
+            wrt,
+            "{:>7} - {:>9}Ki {:>9}Ki {:>9}Ki -",
+            "Sum",
+            sum_rss.to_formatted_string(&Locale::en),
+            sum_swap.to_formatted_string(&Locale::en),
+            sum_total.to_formatted_string(&Locale::en)
+        )?;
     }
     //
     Ok(())
