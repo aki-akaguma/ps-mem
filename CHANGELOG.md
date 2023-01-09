@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * reformat `CHANGELOG.md`
 
+### Fixed
+* clippy: needless_borrow
+
 
 ## [0.2.12] (2022-09-04)
 ### Added

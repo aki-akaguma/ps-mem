@@ -32,7 +32,7 @@ pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf, _env: &EnvConf) -> anyhow::Resul
 fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
     let mut recs = Vec::new();
     let base_s = conf.base_dir();
-    let mut sys = linux_procfs::System::new(&base_s);
+    let mut sys = linux_procfs::System::new(base_s);
     let pid_vec = if conf.opt_pid > 0 {
         vec![conf.opt_pid]
     } else {
@@ -191,7 +191,7 @@ fn do_proc_out_list(
 
 fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
     let base_s = conf.base_dir();
-    let mut sys = linux_procfs::System::new(&base_s);
+    let mut sys = linux_procfs::System::new(base_s);
     //
     let term = Arc::new(atomic::AtomicBool::new(false));
     let _ = signal_hook::flag::register(signal::SIGINT, Arc::clone(&term));
