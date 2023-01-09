@@ -1,5 +1,10 @@
 # ps-mem
 
+[![crate][crate-image]][crate-link]
+[![Docs][docs-image]][docs-link]
+![Rust Version][rustc-image]
+![Apache2/MIT licensed][license-image]
+
 The process memory size listing.
 
 `ps-mem` command is listing all process memory size.
@@ -112,3 +117,12 @@ This project is licensed under either of
    https://opensource.org/licenses/MIT)
 
 at your option.
+
+[//]: # (badges)
+
+[crate-image]: https://img.shields.io/crates/v/ps-mem.svg
+[crate-link]: https://crates.io/crates/ps-mem
+[docs-image]: https://docs.rs/ps-mem/badge.svg
+[docs-link]: https://docs.rs/ps-mem/
+[rustc-image]: https://img.shields.io/badge/rustc-1.56+-blue.svg
+[license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
