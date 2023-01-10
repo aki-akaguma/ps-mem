@@ -4,33 +4,30 @@ version = 3
 
 [[package]]
 name = "aho-corasick"
-version = "0.7.19"
+version = "0.7.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4f55bd91a0978cbfd91c457a164bab8b4001c833b7f323132c0a4e1922dd44e"
+checksum = "cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac"
 dependencies = [
  "memchr",
 ]
 
 [[package]]
 name = "anyhow"
-version = "1.0.63"
+version = "1.0.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a26fa4d7e3f2eebadf743988fc8aec9fa9a9e82611acafd77c1462ed6262440a"
+checksum = "2cb2f989d18dd141ab8ae82f64d1a8cdd37e0840f73a406896cf5e99502fab61"
 
 [[package]]
 name = "arrayvec"
-version = "0.4.12"
+version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cd9fd44efafa8690358b7408d253adf110036b88f55672a933f01d616ad9b1b9"
-dependencies = [
- "nodrop",
-]
+checksum = "8da52d66c7071e2e3fa2a1e5c6d088fec47b593032b254f5e980de8ea54454d6"
 
 [[package]]
 name = "assert-text"
-version = "0.2.6"
+version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5ffc3b0eee6b19ec9f64515b869f3671bfbdd4a769035c0e2fb6bc7a5e3c949"
+checksum = "8ccfbea2f6b81b2bdcaea0ab07d6d330fca70cd82210cd90b9cb2e3df4bc48ea"
 dependencies = [
  "difference",
  "regex",
@@ -44,9 +41,18 @@ checksum = "fd6c0e7b807d60291f42f33f58480c0bfafe28ed08286446f45e463728cf9c1c"
 
 [[package]]
 name = "cfg-iif"
-version = "0.2.3"
+version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b24686dc00b4c48b6c1cbe3503323e5789ce01960fb660a059701201dc3d2248"
+checksum = "17370da389f9518998671906b2400c04a8e4f699578d2963b2ec974b563f7389"
+
+[[package]]
+name = "cpufeatures"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "28d997bd5e24a5928dd43e46dc529867e207907fe0b239c3477d924f7f2ca320"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "difference"
@@ -56,21 +62,21 @@ checksum = "524cbf6897b527295dff137cec09ecf3a05f4fddffd7dfcd1585403449e74198"
 
 [[package]]
 name = "exec-target"
-version = "0.2.6"
+version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee3978de4178433ae49a3095c802e5924d0148db5508ec832ed6ea9014bad6f5"
+checksum = "46c8041c9b9d4d3d9557efc899720c285757436a56f7ada805913f28efe4df73"
 
 [[package]]
 name = "flood-tide"
-version = "0.2.5"
+version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e66263a9d863818646c2e2f34f8aa363b52f3f60edcf6e11313930100e232dfe"
+checksum = "6eef9f93d8cc660233a25f995a445ddfb6f9de6d2439709300013f0006498866"
 
 [[package]]
 name = "flood-tide-gen"
-version = "0.1.17"
+version = "0.1.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "79d4eb64ad39267ce920971603a289898cb9778f8c02e46f54c2f8f5bb65b5fb"
+checksum = "af95a49ed924cde190334c832451cc3ef5964a6a4a9541511ec7a2592ff20f9a"
 dependencies = [
  "anyhow",
  "case",
@@ -79,27 +85,27 @@ dependencies = [
 
 [[package]]
 name = "indoc"
-version = "1.0.7"
+version = "1.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "adab1eaa3408fb7f0c777a73e7465fd5656136fc93b670eb6df3c88c2c1344e3"
+checksum = "da2d6f23ffea9d7e76c53eee25dfb67bcd8fde7f1198b0855350698c9f07c780"
 
 [[package]]
 name = "itoa"
-version = "0.4.8"
+version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b71991ff56294aa922b450139ee08b3bfc70982c6b2c7562771375cf73542dd4"
+checksum = "fad582f4b9e86b6caa621cabeb0963332d92eea04729ab12892c2533951e6440"
 
 [[package]]
 name = "libc"
-version = "0.2.132"
+version = "0.2.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8371e4e5341c3a96db127eb2465ac681ced4c433e01dd0e938adbef26ba93ba5"
+checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 
 [[package]]
 name = "linux-procfs"
-version = "0.3.11"
+version = "0.3.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef55bb53418340ae143a5d20b572bf4d404c644d6dd07d0dfbbe24a74b07625f"
+checksum = "8d6a0c399c51fa0c97491f474d5a67e14e92c926f6fd1393240c9a402263b576"
 dependencies = [
  "cfg-iif",
  "memx",
@@ -114,18 +120,19 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
 
 [[package]]
 name = "memx"
-version = "0.1.21"
+version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7464df217e8198195bceb7ccdff56201b4aa2a0e3e3a4254f2d24b8080b6e978"
+checksum = "cd311ff35c67b06c057084d17ceddf7a42b6e2998fc75fa697485eefc9c63700"
 dependencies = [
+ "cpufeatures",
  "rustc_version",
 ]
 
 [[package]]
 name = "memx-cdy"
-version = "0.1.8"
+version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b5ade3deb40aa5f3b486dc4483e78f27e3aef3444e02c986b14c5af2aa0f37bd"
+checksum = "ed3333d4072ffa9c47a43875391ca6133afd4eaf41b14e6542940ae30e95486a"
 dependencies = [
  "libc",
  "memx",
@@ -133,24 +140,18 @@ dependencies = [
 
 [[package]]
 name = "naive_opt"
-version = "0.1.18"
+version = "0.1.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b87a5f33c8c290beda6a87848d74ec0b83644a3efaf887555d47b5cb95031f83"
+checksum = "35384623e067dd36bc8e79ee7ad28f0e060dfaa57ac6bc96477c8c71422bfafc"
 dependencies = [
  "memx",
 ]
 
 [[package]]
-name = "nodrop"
-version = "0.1.14"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72ef4a56884ca558e5ddb05a1d1e7e1bfd9a68d9ed024c21704cc98872dae1bb"
-
-[[package]]
 name = "num-format"
-version = "0.4.0"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bafe4179722c2894288ee77a9f044f02811c86af699344c498b0840c698a2465"
+checksum = "a652d9771a63711fd3c3deb670acfbe5c30a4072e664d7a3bf5a9e1056ac72c3"
 dependencies = [
  "arrayvec",
  "itoa",
@@ -176,9 +177,9 @@ dependencies = [
 
 [[package]]
 name = "regex"
-version = "1.6.0"
+version = "1.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c4eb3267174b8c6c2f654116623910a0fef09c4753f8dd83db29c48a0df988b"
+checksum = "48aaa5748ba571fb95cd2c85c09f629215d3a6ece942baa100950af03a34f733"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -187,24 +188,24 @@ dependencies = [
 
 [[package]]
 name = "regex-syntax"
-version = "0.6.27"
+version = "0.6.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a3f87b73ce11b1619a3c6332f45341e0047173771e8b8b73f87bfeefb7b56244"
+checksum = "456c603be3e8d448b072f410900c09faf164fbce2d480456f50eea6e25f9c848"
 
 [[package]]
 name = "runnel"
-version = "0.3.11"
+version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb53b6c382cdf8f6119a69f7f9d39df093f313aea3fd0d6cc28e3039e2e986e3"
+checksum = "74c00482bb828d40e92f4a81fee60d50d4f6af1db5cbecf96ca770eb0b85b187"
 dependencies = [
  "rustc_version",
 ]
 
 [[package]]
 name = "rust-version-info-file"
-version = "0.1.6"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18443a81274ef6342d6aba23eb82a862cde285d105f5cac289f7fad16f58922b"
+checksum = "51082dd22c14a0d99d63127a92d9594ff605b139b2f726a6635e00d562508837"
 
 [[package]]
 name = "rustc_version"
@@ -217,9 +218,9 @@ dependencies = [
 
 [[package]]
 name = "semver"
-version = "1.0.13"
+version = "1.0.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "93f6841e709003d68bb2deee8c343572bf446003ec20a583e76f7b15cebf3711"
+checksum = "58bc9567378fc7690d6b2addae4e60ac2eeea07becb2c64b9f218b53865cba2a"
 
 [[package]]
 name = "signal-hook"

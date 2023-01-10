@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 * reformat `CHANGELOG.md`
+* update depends: anyhow(1.0.68)
+* update depends: flood-tide(0.2.8), flood-tide-gen(0.1.19)
+* update depends: memx-cdy(0.1.10), runnel(0.3.15)
+* update depends: regex(1.7.1)
+* update depends: linux-procfs(0.3.13)
+* update depends: num-format(0.4.4), signal-hook(0.3.14)
 
 ### Fixed
 * clippy: needless_borrow

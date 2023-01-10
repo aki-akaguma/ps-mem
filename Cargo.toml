@@ -45,7 +45,7 @@ linux-procfs = { version = "0.3", default-features=false, features=["has_pidentr
 indoc = "1.0"
 assert-text = "0.2"
 exec-target = "0.2"
-regex = "1.5"
+regex = "1.7"
 
 [build-dependencies]
 rust-version-info-file = "0.1"
