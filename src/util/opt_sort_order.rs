@@ -22,7 +22,7 @@ impl ::std::str::FromStr for OptSortOrder {
             "rss" => OptSortOrder::Rss,
             "total" => OptSortOrder::Total,
             _ => {
-                let s = format!("can not parse '{}'", s);
+                let s = format!("can not parse '{s}'");
                 return Err(OptSortOrderParseError::new(s));
             }
         };
@@ -38,7 +38,7 @@ impl ::std::fmt::Display for OptSortOrder {
             OptSortOrder::Rss => "rss",
             OptSortOrder::Total => "total",
         };
-        write!(f, "{}", s)
+        write!(f, "{s}")
     }
 }
 //}}} OptSortOrder

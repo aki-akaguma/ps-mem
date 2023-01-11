@@ -42,7 +42,7 @@ fn usage_message(program: &str) -> String {
         "  {} {}",
         program, "[options] <command> {<arg1> <arg2> ...}"
     );
-    format!("Usage:\n{}\n{}\n", usage1, usage2)
+    format!("Usage:\n{usage1}\n{usage2}\n")
 }
 
 #[rustfmt::skip]

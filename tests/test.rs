@@ -565,6 +565,7 @@ mod test_1 {
         assert_eq!(oup.stdout, "");
         let lines: Vec<_> = oup.stderr.lines().collect();
         // "pid: 817768, rss: 4ki, swap: 0ki, total: 4ki, comm: true"
+        //assert_eq!(lines[0], "");
         assert_text_match!(
             lines[0],
             r"^pid: \d+, rss: +\d+ki, swap: +\d+ki, total: +\d+ki, comm: true$"

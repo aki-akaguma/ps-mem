@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 * clippy: needless_borrow
+* clippy: uninlined_format_args
 
 
 ## [0.2.12] (2022-09-04)
