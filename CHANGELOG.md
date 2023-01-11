@@ -5,9 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] *
+## [Unreleased]
+
+
+## [0.2.13] (2023-01-11)
 ### Added
 * badges into `README.tpl`
+* rust-version = "1.56.0" into Cargo.toml
 
 ### Changed
 * reformat `CHANGELOG.md`
@@ -21,7 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 * clippy: needless_borrow
 * clippy: uninlined_format_args
-
 
 ## [0.2.12] (2022-09-04)
 ### Added
@@ -191,7 +194,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.1.0 (2019-11-02)
 * first commit
 
-[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.12..HEAD
+[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.13..HEAD
+[0.2.13]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.12..v0.2.13
 [0.2.12]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.11..v0.2.12
 [0.2.11]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.10..v0.2.11
 [0.2.10]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.9..v0.2.10
