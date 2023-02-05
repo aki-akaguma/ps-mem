@@ -77,22 +77,22 @@ mod tests {
     #[test]
     fn test_display_empty() {
         let col = OptSortOrder::Empty;
-        assert_eq!(format!("{}", col), "empty");
+        assert_eq!(format!("{col}"), "empty");
     }
     #[test]
     fn test_display_swap() {
         let col = OptSortOrder::Swap;
-        assert_eq!(format!("{}", col), "swap");
+        assert_eq!(format!("{col}"), "swap");
     }
     #[test]
     fn test_display_rss() {
         let col = OptSortOrder::Rss;
-        assert_eq!(format!("{}", col), "rss");
+        assert_eq!(format!("{col}"), "rss");
     }
     #[test]
     fn test_display_total() {
         let col = OptSortOrder::Total;
-        assert_eq!(format!("{}", col), "total");
+        assert_eq!(format!("{col}"), "total");
     }
     #[test]
     fn test_from_str_empty() {
