@@ -26,8 +26,7 @@ checksum = "8da52d66c7071e2e3fa2a1e5c6d088fec47b593032b254f5e980de8ea54454d6"
 [[package]]
 name = "assert-text"
 version = "0.2.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f64d2af93474c0fa6804dbd2bf007c676b003f146251da66aa5266afa0cb3d8d"
+source = "git+https://github.com/aki-akaguma/assert-text#1694c933a4c054f7d0b333ebf1ed9e6170bac2c5"
 dependencies = [
  "difference",
  "regex",

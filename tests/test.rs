@@ -494,7 +494,6 @@ mod test_0 {
 
 mod test_1 {
     use assert_text::assert_text_eq;
-    use assert_text::assert_text_match;
     //use exec_target::args_from;
     use exec_target::exec_target;
     const TARGET_EXE_PATH: &str = super::TARGET_EXE_PATH;
@@ -559,8 +558,11 @@ mod test_1 {
         );
         assert!(oup.status.success());
     }
+    #[cfg(target_os = "linux")]
     #[test]
     fn test_exec() {
+        use assert_text::assert_text_match;
+        //
         let oup = exec_target(TARGET_EXE_PATH, ["/bin/true"]);
         assert_eq!(oup.stdout, "");
         let lines: Vec<_> = oup.stderr.lines().collect();
@@ -568,7 +570,7 @@ mod test_1 {
         //assert_eq!(lines[0], "");
         assert_text_match!(
             lines[0],
-            r"^pid: \d+, rss: +\d+ki, swap: +\d+ki, total: +\d+ki, comm: true$"
+            r"^pid: \d+, rss: +[\d,]+ki, swap: +[\d,]+ki, total: +[\d,]+ki, comm: true$"
         );
         assert!(oup.status.success());
     }
