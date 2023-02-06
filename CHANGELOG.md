@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `.github/workflows/test-macos.yml`
 * `.github/workflows/test-windows.yml`
 * test status badges into `README.tpl`
+* test-helper into `workspace`
 
 ### Changed
 * update depends: flood-tide(0.2.9), flood-tide-gen(0.1.20)

@@ -1,0 +1,15 @@
+[package]
+name = "test-helper"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.58.0"
+
+[[bin]]
+name = "exe-sleep"
+path = "src/exe-sleep.rs"
+
+[dev-dependencies]
+assert-text = "0.2"
+#assert-text = { git = "https://github.com/aki-akaguma/assert-text" }
+exec-target = "0.2"
+regex = "1.7"

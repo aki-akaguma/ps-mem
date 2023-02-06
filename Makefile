@@ -8,6 +8,7 @@ README.md: README.tpl src/lib.rs
 
 test:
 	cargo test
+	cargo test -p test-helper
 
 clean:
 	cargo clean

@@ -558,6 +558,7 @@ mod test_1 {
         );
         assert!(oup.status.success());
     }
+    /*
     #[cfg(target_os = "linux")]
     #[test]
     fn test_exec() {
@@ -574,4 +575,5 @@ mod test_1 {
         );
         assert!(oup.status.success());
     }
+    */
 } // mod test_1
