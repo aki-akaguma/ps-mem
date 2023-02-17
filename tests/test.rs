@@ -1,3 +1,5 @@
+#![cfg(not(miri))]
+
 const TARGET_EXE_PATH: &str = env!(concat!("CARGO_BIN_EXE_", env!("CARGO_PKG_NAME")));
 
 macro_rules! help_msg {
