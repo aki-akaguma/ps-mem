@@ -22,7 +22,7 @@ clean:
 	@rm -f z.*
 
 clippy:
-	cargo clippy --offline --tests --workspace
+	cargo clippy --offline --tests --workspace -- -W clippy::uninlined_format_args
 
 fmt:
 	cargo fmt

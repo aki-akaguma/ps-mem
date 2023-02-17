@@ -13,7 +13,7 @@ fn main() -> anyhow::Result<()> {
     let cmd = env_args[0].as_str();
     let program = &program;
     let env_args: Vec<&str> = env_args[1..].iter().map(|s| s.as_str()).collect();
-    run(&format!("{} {}", program, cmd), &env_args)
+    run(&format!("{program} {cmd}"), &env_args)
 }
 
 pub fn run(program: &str, env_args: &[&str]) -> anyhow::Result<()> {
@@ -26,7 +26,7 @@ pub fn run(program: &str, env_args: &[&str]) -> anyhow::Result<()> {
         "--help" | "-h" | "-H" | "help" => print_help_and_exit(program),
         "--version" | "-V" | "-v" => print_version_and_exit(program),
         _ => {
-            eprintln!("Not fount command: {}", cmd);
+            eprintln!("Not fount command: {cmd}");
             unreachable!()
         }
     }
