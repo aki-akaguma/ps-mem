@@ -43,7 +43,7 @@ signal-hook = "0.3"
 linux-procfs = { version = "0.3", default-features=false, features=["has_pidentry_status_state", "has_pidentry_status_vm_hwm"] }
 
 [dev-dependencies]
-indoc = "1.0"
+indoc = "2.0"
 assert-text = "0.2"
 #assert-text = { git = "https://github.com/aki-akaguma/assert-text" }
 exec-target = "0.2"
