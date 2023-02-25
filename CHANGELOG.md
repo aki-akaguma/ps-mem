@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * test status badges into `README.tpl`
 * test-helper into `workspace`
 * miri supports on tests
+* `tarpaulin` supports into `Makefile`
 
 ### Changed
 * refactored `Makefile`
