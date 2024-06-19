@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `tarpaulin` supports into `Makefile`
 
 ### Changed
+* rename: `config` to `config.toml`
 * refactored `Makefile`
 * update depends: anyhow(1.0.68)
 * update depends: flood-tide(0.2.10), flood-tide-gen(0.1.20)
