@@ -5,7 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] *
+## [Unreleased]
+
+
+## [0.2.14] (2024-06-19)
 ### Added
 * `.github/workflows/test-ubuntu.yml`
 * `.github/workflows/test-macos.yml`
@@ -18,12 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * rename: `config` to `config.toml`
 * refactored `Makefile`
-* update depends: anyhow(1.0.68)
-* update depends: flood-tide(0.2.10), flood-tide-gen(0.1.20)
-* update depends: linux-procfs(0.3.15)
-* update depends: memx-cdy(0.1.12), runnel(0.3.17)
-* update depends: assert-text(0.2.9), exec-taget(0.2.9), rust-version-info-file(0.1.9)
-* update depends: indoc(2.0.0)
+* update depends: anyhow(1.0.86)
+* update depends: flood-tide(0.2.11), flood-tide-gen(0.1.22)
+* update depends: linux-procfs(0.3.16)
+* update depends: memx-cdy(0.1.13), runnel(0.3.19)
+* update depends: assert-text(0.2.10), exec-taget(0.2.9), rust-version-info-file(0.1.10)
+* update depends: indoc(2.0.5)
 
 ### Removed
 * `COPYING`
@@ -33,7 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * clippy: `redundant_static_lifetimes`, `needless_borrow`, `bool_assert_comparison`
 * clippy: `uninlined_format_args`, `unused_imports`
 * rust-version: "1.56.0" to "1.58.0"
-
 
 ## [0.2.13] (2023-01-11)
 ### Added
@@ -221,7 +223,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.1.0 (2019-11-02)
 * first commit
 
-[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.13..HEAD
+[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.14..HEAD
+[0.2.14]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.13..v0.2.14
 [0.2.13]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.12..v0.2.13
 [0.2.12]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.11..v0.2.12
 [0.2.11]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.10..v0.2.11
