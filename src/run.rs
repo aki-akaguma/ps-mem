@@ -15,12 +15,12 @@ pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf, _env: &EnvConf) -> anyhow::Resul
     //println!("{:?}", conf);
     let r = if conf.arg_params.is_empty() {
         let procs_rec = do_proc_in(conf);
-        let mut sout = LineWriter::new(sioe.pout());
+        let mut sout = LineWriter::new(sioe.pg_out().lock());
         do_proc_out_list(conf, &procs_rec, &mut sout)
     } else {
         // invoke exec one process
         let procs_rec = do_proc_invoke(conf)?;
-        let mut serr = LineWriter::new(sioe.perr());
+        let mut serr = LineWriter::new(sioe.pg_err().lock());
         do_proc_out_one(conf, &procs_rec, &mut serr)
     };
     if r.is_broken_pipe() {

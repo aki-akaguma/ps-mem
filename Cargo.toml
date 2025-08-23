@@ -35,7 +35,7 @@ debian_build = []
 [dependencies]
 anyhow = "1.0"
 flood-tide = { version="0.2", default-features=true, features=["stop_at_mm"] }
-runnel = "0.3"
+runnel = "0.4"
 memx-cdy = "0.1"
 
 num-format = "0.4"
@@ -47,10 +47,10 @@ indoc = "2.0"
 assert-text = "0.2"
 #assert-text = { git = "https://github.com/aki-akaguma/assert-text" }
 exec-target = "0.2"
-regex = "1.7"
+regex = "1.11"
 
 [build-dependencies]
-rust-version-info-file = "0.1"
+rust-version-info-file = "0.2"
 
 [workspace]
 members = [
