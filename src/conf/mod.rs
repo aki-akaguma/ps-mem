@@ -35,13 +35,35 @@ impl CmdOptConf {
 pub struct EnvConf {}
 impl EnvConf {
     pub fn new() -> Self {
-        //
         Self {}
     }
 }
 impl std::default::Default for EnvConf {
     fn default() -> EnvConf {
         EnvConf::new()
+    }
+}
+
+impl<IKV, K, V> From<IKV> for EnvConf
+where
+    IKV: IntoIterator<Item = (K, V)>,
+    K: AsRef<std::ffi::OsStr>,
+    V: AsRef<std::ffi::OsStr>,
+{
+    fn from(_ary: IKV) -> Self {
+        Self::new()
+        /*
+        let mut r = Self::new();
+        for a in ary {
+            match a.0.as_ref().to_string_lossy().to_string().as_str() {
+                "AKI_GSUB_COLOR_SEQ_ST" => {
+                    r.color_seq_start = a.1.as_ref().to_string_lossy().to_string();
+                }
+                _ => (),
+            }
+        }
+        r
+        */
     }
 }
 

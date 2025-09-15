@@ -1,4 +1,4 @@
-use crate::conf::{CmdOptConf, EnvConf, ProcsRec};
+use crate::conf::{CmdOptConf, ProcsRec};
 use crate::util::err::BrokenPipeError;
 use crate::util::OptSortOrder;
 use runnel::RunnelIoe;
@@ -11,7 +11,7 @@ use std::cmp::Ordering;
 use std::sync::atomic;
 use std::sync::Arc;
 
-pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf, _env: &EnvConf) -> anyhow::Result<()> {
+pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf) -> anyhow::Result<()> {
     //println!("{:?}", conf);
     let r = if conf.arg_params.is_empty() {
         let procs_rec = do_proc_in(conf);

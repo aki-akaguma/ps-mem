@@ -126,28 +126,13 @@ where
     I: IntoIterator<Item = S>,
     S: AsRef<std::ffi::OsStr>,
 {
-    let env = conf::EnvConf::new();
-    execute_env(sioe, prog_name, args, &env)
-}
-
-pub fn execute_env<I, S>(
-    sioe: &RunnelIoe,
-    prog_name: &str,
-    args: I,
-    env: &conf::EnvConf,
-) -> anyhow::Result<()>
-where
-    I: IntoIterator<Item = S>,
-    S: AsRef<std::ffi::OsStr>,
-{
     let args: Vec<String> = args
         .into_iter()
         .map(|s| s.as_ref().to_string_lossy().into_owned())
         .collect();
     let args_str: Vec<&str> = args.iter().map(|s| s.as_str()).collect();
-    //
     match conf::parse_cmdopts(prog_name, &args_str) {
-        Ok(conf) => run::run(sioe, &conf, env),
+        Ok(conf) => run::run(sioe, &conf),
         Err(errs) => {
             if let Some(err) = errs.iter().find(|e| e.is_help() || e.is_version()) {
                 sioe.pg_out().write_line(err.to_string())?;

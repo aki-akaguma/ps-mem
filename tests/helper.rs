@@ -1,7 +1,4 @@
-#![cfg(not(miri))]
-
-const TARGET_EXE_PATH: &str = env!(concat!("CARGO_BIN_EXE_", env!("CARGO_PKG_NAME")));
-
+#[allow(unused_macros)]
 macro_rules! help_msg {
     () => {
         concat!(
@@ -41,30 +38,51 @@ macro_rules! help_msg {
     };
 }
 
+#[allow(unused_macros)]
+macro_rules! x_help_msg {
+    () => {
+        concat!(
+            indoc::indoc!(
+                r#"
+            Options:
+              -X rust-version-info     display package version info and exit
+              -X base_dir=<path>       set <path> is base directory
+            "#
+            ),
+            "\n",
+        )
+    };
+}
+
+#[allow(unused_macros)]
 macro_rules! try_help_msg {
     () => {
         "Try --help for help.\n"
     };
 }
 
+#[allow(unused_macros)]
 macro_rules! program_name {
     () => {
         "ps-mem"
     };
 }
 
+#[allow(unused_macros)]
 macro_rules! version_msg {
     () => {
         concat!(program_name!(), " ", env!("CARGO_PKG_VERSION"), "\n")
     };
 }
 
+#[allow(unused_macros)]
 macro_rules! fixtures_1 {
     () => {
         "fixtures/t1"
     };
 }
 
+#[allow(unused_macros)]
 macro_rules! result_1_msg {
     (head) => {
         r"    PID -       RSS        SWAP       TOTAL   - COMM
@@ -430,152 +448,3 @@ macro_rules! result_1_msg {
 "
     };
 }
-
-mod test_0 {
-    use assert_text::assert_text_eq;
-    use exec_target::exec_target;
-    //use exec_target::args_from;
-    const TARGET_EXE_PATH: &str = super::TARGET_EXE_PATH;
-    //
-    #[test]
-    fn test_help() {
-        let oup = exec_target(TARGET_EXE_PATH, ["-H"]);
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(oup.stdout, help_msg!());
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_help_long() {
-        let oup = exec_target(TARGET_EXE_PATH, ["--help"]);
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(oup.stdout, help_msg!());
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_version() {
-        let oup = exec_target(TARGET_EXE_PATH, ["-V"]);
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(oup.stdout, version_msg!());
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_version_long() {
-        let oup = exec_target(TARGET_EXE_PATH, ["--version"]);
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(oup.stdout, version_msg!());
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_invalid_opt() {
-        let oup = exec_target(TARGET_EXE_PATH, ["-z"]);
-        assert_eq!(
-            oup.stderr,
-            concat!(
-                program_name!(),
-                ": ",
-                "Invalid option: z\n",
-                try_help_msg!()
-            )
-        );
-        assert_eq!(oup.stdout, "");
-        assert!(!oup.status.success());
-    }
-    /*
-    #[test]
-    fn test_non_option() {
-        let oup = exec_target(TARGET_EXE_PATH, args_from(""));
-        assert!(!oup.status.success());
-        assert_eq!(oup.stdout, "");
-        assert_eq!(oup.stderr, concat!(
-            "Missing option: e\n",
-            "Unexpected argument: \n",
-            try_help_msg!()));
-    }
-    */
-} // mod test_0
-
-mod test_1 {
-    use assert_text::assert_text_eq;
-    //use exec_target::args_from;
-    use exec_target::exec_target;
-    const TARGET_EXE_PATH: &str = super::TARGET_EXE_PATH;
-
-    //
-    #[test]
-    fn test_t1() {
-        let oup = exec_target(
-            TARGET_EXE_PATH,
-            ["-X", concat!("base_dir=", fixtures_1!()), "--sort=total"],
-        );
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(
-            oup.stdout,
-            concat!(result_1_msg!(head), result_1_msg!(process))
-        );
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_t2() {
-        let oup = exec_target(
-            TARGET_EXE_PATH,
-            [
-                "-X",
-                concat!("base_dir=", fixtures_1!()),
-                "--sort=total",
-                "-a",
-            ],
-        );
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(oup.stdout, concat!(result_1_msg!(head), result_1_msg!(all)));
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_t3() {
-        let oup = exec_target(
-            TARGET_EXE_PATH,
-            ["-X", concat!("base_dir=", fixtures_1!()), "--pid=1794"],
-        );
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(
-            oup.stdout,
-            concat!(result_1_msg!(head), result_1_msg!(1794))
-        );
-        assert!(oup.status.success());
-    }
-    #[test]
-    fn test_t4() {
-        let oup = exec_target(
-            TARGET_EXE_PATH,
-            [
-                "-X",
-                concat!("base_dir=", fixtures_1!()),
-                "--pid=1794",
-                "--cmdline",
-            ],
-        );
-        assert_eq!(oup.stderr, "");
-        assert_text_eq!(
-            oup.stdout,
-            concat!(result_1_msg!(head, cmdline), result_1_msg!(1794, cmdline))
-        );
-        assert!(oup.status.success());
-    }
-    /*
-    #[cfg(target_os = "linux")]
-    #[test]
-    fn test_exec() {
-        use assert_text::assert_text_match;
-        //
-        let oup = exec_target(TARGET_EXE_PATH, ["/bin/true"]);
-        assert_eq!(oup.stdout, "");
-        let lines: Vec<_> = oup.stderr.lines().collect();
-        // "pid: 817768, rss: 4ki, swap: 0ki, total: 4ki, comm: true"
-        //assert_eq!(lines[0], "");
-        assert_text_match!(
-            lines[0],
-            r"^pid: \d+, rss: +[\d,]+ki, swap: +[\d,]+ki, total: +[\d,]+ki, comm: true$"
-        );
-        assert!(oup.status.success());
-    }
-    */
-} // mod test_1

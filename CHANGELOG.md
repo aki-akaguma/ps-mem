@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 * minimum support version in doc
 
+### Removed
+* `execute_env()`
+
 ## [0.2.15] (2024-06-19)
 ### Changed
 * test and build support 1.65.0 on github workflows
