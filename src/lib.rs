@@ -5,7 +5,7 @@ The process memory size listing.
 
 # Feature
 
-- minimum support rustc 1.65.0 (897e37553 2022-11-02)
+- minimum support rustc 1.68.0 (2c8cc3432 2023-03-06)
 
 # Command help
 
