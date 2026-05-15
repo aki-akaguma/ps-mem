@@ -1,16 +1,11 @@
 //{{{ OptSortOrder
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Default, Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OptSortOrder {
+    #[default]
     Empty = 0,
     Swap,
     Rss,
     Total,
-}
-
-impl Default for OptSortOrder {
-    fn default() -> OptSortOrder {
-        OptSortOrder::Empty
-    }
 }
 
 impl ::std::str::FromStr for OptSortOrder {

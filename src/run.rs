@@ -70,7 +70,7 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
     }
     //
     match conf.opt_sort {
-        OptSortOrder::Empty => recs.sort_by(|a, b| a.num.cmp(&b.num)),
+        OptSortOrder::Empty => recs.sort_by_key(|a| a.num),
         OptSortOrder::Swap => recs.sort_by(|a, b| {
             let o = a.swap.cmp(&b.swap);
             match o {

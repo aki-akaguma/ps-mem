@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * minimum support rustc 1.68.0 (2c8cc3432 2023-03-06)
 
+### Fixed
+* `clippy::derivable_impls`
+* `clippy::unnecessary_sort_by`
+
 ## [0.3.0] (2025-09-15)
 ### Added
 * `specs`
