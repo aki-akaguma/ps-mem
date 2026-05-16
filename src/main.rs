@@ -9,7 +9,7 @@ fn main() {
     //
     let sioe = RunnelIoeBuilder::new().build();
     //
-    if let Err(err) = execute(&sioe, program, &env_args) {
+    if let Err(err) = execute(&sioe, program, env_args) {
         let _ = sioe.pg_err().write_line(format!("{program}: {err:#}"));
         std::process::exit(1);
     };
