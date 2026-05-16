@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+* update crate: runnel(0.4.2), regex(1.12)
 * minimum support rustc 1.68.0 (2c8cc3432 2023-03-06)
 
 ### Fixed
 * `clippy::derivable_impls`
 * `clippy::unnecessary_sort_by`
+
+### Removed
+* `memx-cdy`
 
 ## [0.3.0] (2025-09-15)
 ### Added
