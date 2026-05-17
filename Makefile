@@ -6,6 +6,9 @@ readme: README.md
 README.md: README.tpl src/lib.rs
 	cargo readme > $@
 
+fetch:
+	cargo fetch
+
 test:
 	cargo test --offline
 	cargo test --offline -p test-helper
@@ -36,3 +39,6 @@ tarpaulin:
 	#cargo tarpaulin --offline --engine llvm --out lcov --output-dir ./target
 	cargo tarpaulin --offline --engine ptrace --out lcov --output-dir ./target
 	genhtml -o target/lcov --demangle-cpp target/lcov.info
+
+gen-src-cmd:
+	cargo xtask gen-src-cmd gen-src-cmd

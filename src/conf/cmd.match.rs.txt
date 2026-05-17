@@ -4,13 +4,13 @@ match CmdOp::from(nv.opt.num) {
         conf.flg_all = true;
     }
     CmdOp::Sort => {
-        conf.opt_sort = value_to_opt_sort_order(nv)?;
+        conf.opt_sort = value_to_type::<OptSortOrder>(nv)?;
     }
     CmdOp::Pid => {
-        conf.opt_pid = value_to_i32(nv)?;
+        conf.opt_pid = value_to_type::<i32>(nv)?;
     }
     CmdOp::Sleep => {
-        conf.opt_sleep = value_to_u32(nv)?;
+        conf.opt_sleep = value_to_type::<u32>(nv)?;
     }
     CmdOp::Cmdline => {
         conf.flg_cmdline = true;
@@ -22,6 +22,6 @@ match CmdOp::from(nv.opt.num) {
         conf.flg_version = true;
     }
     CmdOp::UcX => {
-        conf.opt_uc_x.push(value_to_opt_uc_x_param(nv)?);
+        conf.opt_uc_x.push(value_to_type::<OptUcXParam>(nv)?);
     }
 }

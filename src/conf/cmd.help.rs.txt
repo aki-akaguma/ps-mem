@@ -24,14 +24,25 @@ enum CmdOp {
     UcX,
 }
 
-impl std::convert::From<u8> for CmdOp {
-    fn from(value: u8) -> Self {
-        unsafe { std::mem::transmute(value) }
-    }
-}
 impl CmdOp {
     pub const fn to(self) -> OptNum {
         self as OptNum
+    }
+}
+
+impl std::convert::From<u8> for CmdOp {
+    fn from(value: u8) -> Self {
+        match value {
+            0 => CmdOp::All,
+            1 => CmdOp::Sort,
+            2 => CmdOp::Pid,
+            3 => CmdOp::Sleep,
+            4 => CmdOp::Cmdline,
+            5 => CmdOp::Help,
+            6 => CmdOp::Version,
+            7 => CmdOp::UcX,
+            _ => unreachable!(),
+        }
     }
 }
 
@@ -76,49 +87,14 @@ impl flood_tide::HelpVersion for CmdOptConf {
     }
 }
 
-fn value_to_i32(nv: &NameVal<'_>) -> Result<i32, OptParseError> {
+fn value_to_type<T>(nv: &NameVal<'_>) -> Result<T, OptParseError>
+where
+    T: std::str::FromStr,
+    <T as std::str::FromStr>::Err: std::fmt::Display,
+{
     match nv.val {
-        Some(x) => match x.parse::<i32>() {
+        Some(x) => match x.parse::<T>() {
             Ok(d) => Ok(d),
-            Err(err) => Err(OptParseError::invalid_option_argument(
-                &nv.opt.lon_or_sho(),
-                &err.to_string(),
-            )),
-        },
-        None => Err(OptParseError::missing_option_argument(&nv.opt.lon_or_sho())),
-    }
-}
-
-fn value_to_u32(nv: &NameVal<'_>) -> Result<u32, OptParseError> {
-    match nv.val {
-        Some(x) => match x.parse::<u32>() {
-            Ok(d) => Ok(d),
-            Err(err) => Err(OptParseError::invalid_option_argument(
-                &nv.opt.lon_or_sho(),
-                &err.to_string(),
-            )),
-        },
-        None => Err(OptParseError::missing_option_argument(&nv.opt.lon_or_sho())),
-    }
-}
-
-fn value_to_opt_sort_order(nv: &NameVal<'_>) -> Result<OptSortOrder, OptParseError> {
-    match nv.val {
-        Some(s) => match FromStr::from_str(s) {
-            Ok(x) => Ok(x),
-            Err(err) => Err(OptParseError::invalid_option_argument(
-                &nv.opt.lon_or_sho(),
-                &err.to_string(),
-            )),
-        },
-        None => Err(OptParseError::missing_option_argument(&nv.opt.lon_or_sho())),
-    }
-}
-
-fn value_to_opt_uc_x_param(nv: &NameVal<'_>) -> Result<OptUcXParam, OptParseError> {
-    match nv.val {
-        Some(s) => match FromStr::from_str(s) {
-            Ok(x) => Ok(x),
             Err(err) => Err(OptParseError::invalid_option_argument(
                 &nv.opt.lon_or_sho(),
                 &err.to_string(),

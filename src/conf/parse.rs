@@ -6,7 +6,6 @@ use flood_tide::{OptParseError, OptParseErrors};
 
 use crate::util::OptSortOrder;
 use crate::util::OptUcXParam;
-use std::str::FromStr;
 
 //----------------------------------------------------------------------
 include!("cmd.help.rs.txt");
