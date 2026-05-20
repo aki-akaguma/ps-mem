@@ -96,6 +96,7 @@ pub fn parse_cmdopts(a_prog_name: &str, args: &[&str]) -> Result<CmdOptConf, Opt
     //
     let mut conf = CmdOptConf {
         prog_name: a_prog_name.to_string(),
+        // default sleep msec: 10ms to capture short-lived memory peaks
         opt_sleep: 10,
         ..Default::default()
     };

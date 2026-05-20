@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * improved error handling in `do_proc_invoke` to return `anyhow::Result` instead of panicking on command start failure.
 * used safe PID type conversion from `u32` to `i32` in `do_proc_invoke`.
 * clarified `sioe` (Standard Input/Output/Error streams) definition in `src/lib.rs` documentation.
+* clarified the intent of the default 10ms sleep interval in `src/conf/parse.rs`.
 * update crate: flood-tide(0.2.14), flood-tide-gen(0.2.2)
 * rustc(1.71.0) on `.github/workflows/test-windows.yml`
 * update crate: runnel(0.4.2), regex(1.12)
