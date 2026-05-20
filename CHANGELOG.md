@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+
+## [0.3.1] (2026-05-20)
 ### Changed
 * simplified sorting logic in `src/run.rs` using tuple comparison for better readability.
 * refactored process data gathering in `do_proc_in` using functional iterators (`filter_map`, `collect`).
@@ -261,7 +264,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.1.0 (2019-11-02)
 * first commit
 
-[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.15..HEAD
+[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.1..HEAD
+[0.3.1]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.0..v0.3.1
+[0.3.0]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.15..v0.3.0
 [0.2.15]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.14..v0.2.15
 [0.2.14]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.13..v0.2.14
 [0.2.13]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.12..v0.2.13

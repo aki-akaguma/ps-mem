@@ -162,7 +162,7 @@ dependencies = [
 
 [[package]]
 name = "ps-mem"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "anyhow",
  "assert-text",
