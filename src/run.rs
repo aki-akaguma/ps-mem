@@ -145,7 +145,10 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
         .args(args)
         .spawn()
         .with_context(|| format!("{prog} command failed to start"))?;
-    let pid = child.id() as i32;
+    let pid: i32 = child
+        .id()
+        .try_into()
+        .with_context(|| format!("failed to convert PID {} to i32", child.id()))?;
     //
     let cmdline = match sys.get_pidentry_comm(pid) {
         Some(a) => a.cmdline,
