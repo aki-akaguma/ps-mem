@@ -1,6 +1,7 @@
 use crate::conf::{CmdOptConf, ProcsRec};
 use crate::util::err::BrokenPipeError;
 use crate::util::OptSortOrder;
+use anyhow::Context;
 use runnel::RunnelIoe;
 use std::io::{LineWriter, Write};
 
@@ -143,7 +144,7 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
     let mut child = std::process::Command::new(prog)
         .args(args)
         .spawn()
-        .unwrap_or_else(|_| panic!("{prog} command failed to start"));
+        .with_context(|| format!("{prog} command failed to start"))?;
     let pid = child.id() as i32;
     //
     let cmdline = match sys.get_pidentry_comm(pid) {
