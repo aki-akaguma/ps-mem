@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 * simplified sorting logic in `src/run.rs` using tuple comparison for better readability.
+* refactored process data gathering in `do_proc_in` using functional iterators (`filter_map`, `collect`).
 * improved error handling in `do_proc_invoke` to return `anyhow::Result` instead of panicking on command start failure.
 * used safe PID type conversion from `u32` to `i32` in `do_proc_invoke`.
 * clarified `sioe` (Standard Input/Output/Error streams) definition in `src/lib.rs` documentation.

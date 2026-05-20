@@ -30,7 +30,6 @@ pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf) -> anyhow::Result<()> {
 }
 
 fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
-    let mut recs = Vec::new();
     let base_s = conf.base_dir();
     let mut sys = linux_procfs::System::new(base_s);
     let pid_vec = if conf.opt_pid > 0 {
@@ -38,36 +37,31 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
     } else {
         sys.get_pids()
     };
-    for &pid in pid_vec.iter() {
-        let pid_status = match sys.get_pidentry_status(pid) {
-            Some(a) => a,
-            None => continue,
-        };
-        let pid_cmdline = if conf.flg_cmdline {
-            match sys.get_pidentry_cmdline(pid) {
-                Some(a) => a,
-                None => continue,
+    //
+    let mut recs: Vec<ProcsRec> = pid_vec
+        .into_iter()
+        .filter_map(|pid| {
+            let pid_status = sys.get_pidentry_status(pid)?;
+            let pid_cmdline = if conf.flg_cmdline {
+                sys.get_pidentry_cmdline(pid)?
+            } else {
+                sys.get_pidentry_comm(pid)?
+            };
+            //
+            if !conf.flg_all && pid_status.state != b'Z' && pid_status.vm_size == 0 {
+                return None;
             }
-        } else {
-            match sys.get_pidentry_comm(pid) {
-                Some(a) => a,
-                None => continue,
-            }
-        };
-        //
-        if !conf.flg_all && pid_status.state != b'Z' && pid_status.vm_size == 0 {
-            continue;
-        }
-        //
-        recs.push(ProcsRec {
-            num: pid,
-            state: pid_status.state,
-            swap: pid_status.vm_swap,
-            rss: pid_status.vm_rss,
-            total: pid_status.vm_swap + pid_status.vm_rss,
-            command: pid_cmdline.cmdline,
-        });
-    }
+            //
+            Some(ProcsRec {
+                num: pid,
+                state: pid_status.state,
+                swap: pid_status.vm_swap,
+                rss: pid_status.vm_rss,
+                total: pid_status.vm_swap + pid_status.vm_rss,
+                command: pid_cmdline.cmdline,
+            })
+        })
+        .collect();
     //
     let state_key = |rec: &ProcsRec| if rec.state == b'Z' { b'Z' } else { b'A' };
     match conf.opt_sort {
