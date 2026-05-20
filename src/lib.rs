@@ -113,8 +113,8 @@ const TRY_HELP_MSG: &str = "Try --help for help.";
 /// execute ps-mem
 ///
 /// params:
-///   - sioe: stream in/out/err
-///   - program: program name. etc. "ps-mem"
+///   - sioe: Standard Input/Output/Error streams
+///   - prog_name: program name. e.g. "ps-mem"
 ///   - args: parameter arguments.
 ///
 /// return:
