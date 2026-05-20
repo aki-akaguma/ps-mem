@@ -7,7 +7,6 @@ use std::io::{LineWriter, Write};
 use num_format::Locale;
 use num_format::ToFormattedString;
 use signal_hook::consts::signal;
-use std::cmp::Ordering;
 use std::sync::atomic;
 use std::sync::Arc;
 
@@ -69,76 +68,18 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
         });
     }
     //
+    let state_key = |rec: &ProcsRec| if rec.state == b'Z' { b'Z' } else { b'A' };
     match conf.opt_sort {
         OptSortOrder::Empty => recs.sort_by_key(|a| a.num),
         OptSortOrder::Swap => recs.sort_by(|a, b| {
-            let o = a.swap.cmp(&b.swap);
-            match o {
-                Ordering::Equal => {
-                    let o = a.rss.cmp(&b.rss);
-                    match o {
-                        Ordering::Equal => {
-                            let a_st = if a.state == b'Z' { b'Z' } else { b'A' };
-                            let b_st = if b.state == b'Z' { b'Z' } else { b'A' };
-                            let o = a_st.cmp(&b_st);
-                            match o {
-                                Ordering::Equal => a.num.cmp(&b.num),
-                                _ => o,
-                            }
-                        }
-                        _ => o,
-                    }
-                }
-                _ => o,
-            }
+            (a.swap, a.rss, state_key(a), a.num).cmp(&(b.swap, b.rss, state_key(b), b.num))
         }),
         OptSortOrder::Rss => recs.sort_by(|a, b| {
-            let o = a.rss.cmp(&b.rss);
-            match o {
-                Ordering::Equal => {
-                    let o = a.swap.cmp(&b.swap);
-                    match o {
-                        Ordering::Equal => {
-                            let a_st = if a.state == b'Z' { b'Z' } else { b'A' };
-                            let b_st = if b.state == b'Z' { b'Z' } else { b'A' };
-                            let o = a_st.cmp(&b_st);
-                            match o {
-                                Ordering::Equal => a.num.cmp(&b.num),
-                                _ => o,
-                            }
-                        }
-                        _ => o,
-                    }
-                }
-                _ => o,
-            }
+            (a.rss, a.swap, state_key(a), a.num).cmp(&(b.rss, b.swap, state_key(b), b.num))
         }),
         OptSortOrder::Total => recs.sort_by(|a, b| {
-            let o = a.total.cmp(&b.total);
-            match o {
-                Ordering::Equal => {
-                    let o = a.rss.cmp(&b.rss);
-                    match o {
-                        Ordering::Equal => {
-                            let o = a.swap.cmp(&b.swap);
-                            match o {
-                                Ordering::Equal => {
-                                    let a_st = if a.state == b'Z' { b'Z' } else { b'A' };
-                                    let b_st = if b.state == b'Z' { b'Z' } else { b'A' };
-                                    let o = a_st.cmp(&b_st);
-                                    match o {
-                                        Ordering::Equal => a.num.cmp(&b.num),
-                                        _ => o,
-                                    }
-                                }
-                                _ => o,
-                            }
-                        }
-                        _ => o,
-                    }
-                }
-                _ => o,
-            }
+            (a.total, a.rss, a.swap, state_key(a), a.num)
+                .cmp(&(b.total, b.rss, b.swap, state_key(b), b.num))
         }),
     }
     //
