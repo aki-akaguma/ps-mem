@@ -35,17 +35,17 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
     let pid_vec = if conf.opt_pid > 0 {
         vec![conf.opt_pid]
     } else {
-        sys.get_pids()
+        sys.get_pids().unwrap()
     };
     //
     let mut recs: Vec<ProcsRec> = pid_vec
         .into_iter()
         .filter_map(|pid| {
-            let pid_status = sys.get_pidentry_status(pid)?;
+            let pid_status = sys.get_pidentry_status(pid).unwrap()?;
             let pid_cmdline = if conf.flg_cmdline {
-                sys.get_pidentry_cmdline(pid)?
+                sys.get_pidentry_cmdline(pid).unwrap()?
             } else {
-                sys.get_pidentry_comm(pid)?
+                sys.get_pidentry_comm(pid).unwrap()?
             };
             //
             if !conf.flg_all && pid_status.state != b'Z' && pid_status.vm_size == 0 {
@@ -73,8 +73,13 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
             (a.rss, a.swap, state_key(a), a.num).cmp(&(b.rss, b.swap, state_key(b), b.num))
         }),
         OptSortOrder::Total => recs.sort_by(|a, b| {
-            (a.total, a.rss, a.swap, state_key(a), a.num)
-                .cmp(&(b.total, b.rss, b.swap, state_key(b), b.num))
+            (a.total, a.rss, a.swap, state_key(a), a.num).cmp(&(
+                b.total,
+                b.rss,
+                b.swap,
+                state_key(b),
+                b.num,
+            ))
         }),
     }
     //
@@ -145,8 +150,9 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
         .with_context(|| format!("failed to convert PID {} to i32", child.id()))?;
     //
     let cmdline = match sys.get_pidentry_comm(pid) {
-        Some(a) => a.cmdline,
-        None => String::new(),
+        Ok(Some(a)) => a.cmdline,
+        Ok(None) => String::new(),
+        Err(err) => return Err(anyhow!("sys.get_pidentry_comm({pid}): {err}")),
     };
     let mut vm_rss = 0;
     let mut vm_swap = 0;
@@ -154,7 +160,7 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
     let sleep_msec = std::time::Duration::from_millis(conf.opt_sleep as u64);
     loop {
         //
-        if let Some(pid_status) = sys.get_pidentry_status(pid) {
+        if let Ok(Some(pid_status)) = sys.get_pidentry_status(pid) {
             vm_swap = vm_swap.max(pid_status.vm_swap);
             vm_rss = vm_rss.max(pid_status.vm_rss);
         };

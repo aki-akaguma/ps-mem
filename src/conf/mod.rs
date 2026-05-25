@@ -11,7 +11,7 @@ impl CmdOptConf {
                 return s.clone();
             }
         }
-        String::new()
+        String::from("/")
     }
     pub fn is_opt_uc_x_help(&self) -> bool {
         for o in self.opt_uc_x.iter() {

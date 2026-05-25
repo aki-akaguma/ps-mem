@@ -39,7 +39,8 @@ runnel = "0.4"
 
 num-format = "0.4"
 signal-hook = "0.3"
-linux-procfs = { version = "0.3", default-features=false, features=["has_pidentry_status_state", "has_pidentry_status_vm_hwm"] }
+linux-procfs = { version = "0.4", default-features=false, features=["has_pidentry_status_state", "has_pidentry_status_vm_hwm"] }
+#linux-procfs = { path="../../lib/linux-procfs", default-features=false, features=["has_pidentry_status_state", "has_pidentry_status_vm_hwm"] }
 
 [dev-dependencies]
 indoc = "2.0"
