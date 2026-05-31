@@ -14,7 +14,7 @@ use std::sync::Arc;
 pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf) -> anyhow::Result<()> {
     //println!("{:?}", conf);
     let r = if conf.arg_params.is_empty() {
-        let procs_rec = do_proc_in(conf);
+        let procs_rec = do_proc_in(conf)?;
         let mut sout = LineWriter::new(sioe.pg_out().lock());
         do_proc_out_list(conf, &procs_rec, &mut sout)
     } else {
@@ -29,23 +29,23 @@ pub fn run(sioe: &RunnelIoe, conf: &CmdOptConf) -> anyhow::Result<()> {
     r
 }
 
-fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
+fn do_proc_in(conf: &CmdOptConf) -> anyhow::Result<Vec<ProcsRec>> {
     let base_s = conf.base_dir();
     let mut sys = linux_procfs::System::new(base_s);
     let pid_vec = if conf.opt_pid > 0 {
         vec![conf.opt_pid]
     } else {
-        sys.get_pids().unwrap()
+        sys.get_pids().context("Failed to get PIDs")?
     };
     //
     let mut recs: Vec<ProcsRec> = pid_vec
         .into_iter()
         .filter_map(|pid| {
-            let pid_status = sys.get_pidentry_status(pid).unwrap()?;
+            let pid_status = sys.get_pidentry_status(pid).ok().flatten()?;
             let pid_cmdline = if conf.flg_cmdline {
-                sys.get_pidentry_cmdline(pid).unwrap()?
+                sys.get_pidentry_cmdline(pid).ok().flatten()?
             } else {
-                sys.get_pidentry_comm(pid).unwrap()?
+                sys.get_pidentry_comm(pid).ok().flatten()?
             };
             //
             if !conf.flg_all && pid_status.state != b'Z' && pid_status.vm_size == 0 {
@@ -83,7 +83,7 @@ fn do_proc_in(conf: &CmdOptConf) -> Vec<ProcsRec> {
         }),
     }
     //
-    recs
+    Ok(recs)
 }
 
 fn do_proc_out_list(
