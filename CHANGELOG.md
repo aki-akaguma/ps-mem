@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * reorganized and renamed previous code review files into `docs/reviews/` directory for better traceability.
 * refactored `do_proc_in` in `src/run.rs` to use safe error handling instead of `unwrap()`, improving robustness against process state changes.
+* improved error message for PID type conversion in `do_proc_invoke` for better clarity.
 
 
 ## [0.3.2] (2026-05-26)

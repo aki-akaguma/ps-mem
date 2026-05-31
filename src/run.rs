@@ -147,7 +147,13 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
     let pid: i32 = child
         .id()
         .try_into()
-        .with_context(|| format!("failed to convert PID {} to i32", child.id()))?;
+        .with_context(|| {
+            format!(
+                "OS returned PID {} which is out of range for this tool (max: {})",
+                child.id(),
+                i32::MAX
+            )
+        })?;
     //
     let cmdline = match sys.get_pidentry_comm(pid) {
         Ok(Some(a)) => a.cmdline,
