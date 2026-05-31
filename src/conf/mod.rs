@@ -6,28 +6,21 @@ mod parse;
 
 impl CmdOptConf {
     pub fn base_dir(&self) -> String {
-        for o in self.opt_uc_x.iter() {
-            if let OptUcXParam::BaseDir(s) = o {
-                return s.clone();
-            }
-        }
-        String::from("/")
+        self.opt_uc_x
+            .iter()
+            .find_map(|o| match o {
+                OptUcXParam::BaseDir(s) => Some(s.clone()),
+                _ => None,
+            })
+            .unwrap_or_else(|| String::from("/"))
     }
     pub fn is_opt_uc_x_help(&self) -> bool {
-        for o in self.opt_uc_x.iter() {
-            if let OptUcXParam::Help = o {
-                return true;
-            }
-        }
-        false
+        self.opt_uc_x.iter().any(|o| matches!(o, OptUcXParam::Help))
     }
     pub fn is_opt_uc_x_package_version_info(&self) -> bool {
-        for o in self.opt_uc_x.iter() {
-            if let OptUcXParam::RustVersionInfo = o {
-                return true;
-            }
-        }
-        false
+        self.opt_uc_x
+            .iter()
+            .any(|o| matches!(o, OptUcXParam::RustVersionInfo))
     }
 }
 
