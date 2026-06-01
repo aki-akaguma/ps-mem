@@ -144,16 +144,13 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
         .args(args)
         .spawn()
         .with_context(|| format!("{prog} command failed to start"))?;
-    let pid: i32 = child
-        .id()
-        .try_into()
-        .with_context(|| {
-            format!(
-                "OS returned PID {} which is out of range for this tool (max: {})",
-                child.id(),
-                i32::MAX
-            )
-        })?;
+    let pid: i32 = child.id().try_into().with_context(|| {
+        format!(
+            "OS returned PID {} which is out of range for this tool (max: {})",
+            child.id(),
+            i32::MAX
+        )
+    })?;
     //
     let cmdline = match sys.get_pidentry_comm(pid) {
         Ok(Some(a)) => a.cmdline,
