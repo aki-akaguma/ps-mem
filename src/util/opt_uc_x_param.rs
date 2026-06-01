@@ -67,7 +67,6 @@ impl ::std::error::Error for OptUcXParamParseError {
 }
 //}}} OptUcXParamParseError
 
-/*
 #[cfg(test)]
 mod tests {
     use std::str::FromStr;
@@ -75,75 +74,49 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_display_empty() {
-        let col = OptSortOrder::Empty;
-        assert_eq!(format!("{}", col), "empty");
+    fn test_display_void() {
+        let col = OptUcXParam::Void;
+        assert_eq!(format!("{col}"), "void");
     }
     #[test]
-    fn test_display_swap() {
-        let col = OptSortOrder::Swap;
-        assert_eq!(format!("{}", col), "swap");
+    fn test_display_help() {
+        let col = OptUcXParam::Help;
+        assert_eq!(format!("{col}"), "help");
     }
     #[test]
-    fn test_display_rss() {
-        let col = OptSortOrder::Rss;
-        assert_eq!(format!("{}", col), "rss");
+    fn test_display_rust_version_info() {
+        let col = OptUcXParam::RustVersionInfo;
+        assert_eq!(format!("{col}"), "rust-version-info");
     }
     #[test]
-    fn test_display_total() {
-        let col = OptSortOrder::Total;
-        assert_eq!(format!("{}", col), "total");
+    fn test_display_base_dir() {
+        let col = OptUcXParam::BaseDir("/tmp".to_string());
+        assert_eq!(format!("{col}"), "base_dir=");
     }
     #[test]
-    fn test_from_str_empty() {
-        let col: OptSortOrder = match FromStr::from_str("empty") {
-            Ok(c) => c,
-            Err(_) => {
-                unreachable!();
-            }
-        };
-        assert_eq!(col, OptSortOrder::Empty);
+    fn test_from_str_void() {
+        let col: OptUcXParam = FromStr::from_str("void").unwrap();
+        assert_eq!(col, OptUcXParam::Void);
     }
     #[test]
-    fn test_from_str_swap() {
-        let col: OptSortOrder = match FromStr::from_str("swap") {
-            Ok(c) => c,
-            Err(_) => {
-                unreachable!();
-            }
-        };
-        assert_eq!(col, OptSortOrder::Swap);
+    fn test_from_str_help() {
+        let col: OptUcXParam = FromStr::from_str("help").unwrap();
+        assert_eq!(col, OptUcXParam::Help);
     }
     #[test]
-    fn test_from_str_rss() {
-        let col: OptSortOrder = match FromStr::from_str("rss") {
-            Ok(c) => c,
-            Err(_) => {
-                unreachable!();
-            }
-        };
-        assert_eq!(col, OptSortOrder::Rss);
+    fn test_from_str_rust_version_info() {
+        let col: OptUcXParam = FromStr::from_str("rust-version-info").unwrap();
+        assert_eq!(col, OptUcXParam::RustVersionInfo);
     }
     #[test]
-    fn test_from_str_total() {
-        let col: OptSortOrder = match FromStr::from_str("total") {
-            Ok(c) => c,
-            Err(_) => {
-                unreachable!();
-            }
-        };
-        assert_eq!(col, OptSortOrder::Total);
+    fn test_from_str_base_dir() {
+        let col: OptUcXParam = FromStr::from_str("base_dir=/tmp").unwrap();
+        assert_eq!(col, OptUcXParam::BaseDir("/tmp".to_string()));
     }
     #[test]
     fn test_from_str_invalid() {
-        let _col: OptSortOrder = match FromStr::from_str("other") {
-            Ok(_c) => _c,
-            Err(e) => {
-                assert_eq!(e.to_string(), "can not parse \'other\'");
-                return;
-            }
-        };
-        unreachable!();
+        let res: Result<OptUcXParam, _> = FromStr::from_str("invalid");
+        assert!(res.is_err());
+        assert_eq!(res.unwrap_err().to_string(), "can not parse 'invalid'");
     }
 }
-*/

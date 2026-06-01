@@ -180,14 +180,12 @@ fn do_proc_invoke(conf: &CmdOptConf) -> anyhow::Result<ProcsRec> {
         std::thread::sleep(sleep_msec);
         match child.try_wait() {
             Ok(Some(_exit_status)) => {
-                //println!("{:?}", _exit_status);
                 break;
             }
             Ok(None) => {
                 // nothing todo
             }
             Err(err) => {
-                //eprintln!("error attempting to wait: {}", err);
                 return Err(From::from(err));
             }
         }
