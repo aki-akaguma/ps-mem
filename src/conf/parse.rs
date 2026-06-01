@@ -94,12 +94,9 @@ fn parse_match(conf: &mut CmdOptConf, nv: &NameVal<'_>) -> Result<(), OptParseEr
 
 pub fn parse_cmdopts(a_prog_name: &str, args: &[&str]) -> Result<CmdOptConf, OptParseErrors> {
     //
-    let mut conf = CmdOptConf {
-        prog_name: a_prog_name.to_string(),
-        // default sleep msec: 10ms to capture short-lived memory peaks
-        opt_sleep: 10,
-        ..Default::default()
-    };
+    let mut conf = CmdOptConf::default();
+    conf.prog_name = a_prog_name.to_string();
+    //
     let (opt_free, r_errs) =
         parse_simple_gnu_style(&mut conf, &OPT_ARY, &OPT_ARY_SHO_IDX, args, parse_match);
     //

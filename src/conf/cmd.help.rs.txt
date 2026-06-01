@@ -62,7 +62,23 @@ const OPT_ARY: [Opt;8] = [
 const OPT_ARY_SHO_IDX: [(u8,usize);5] = [
 (b'H',3),(b'V',7),(b'X',0),(b'a',1),(b'l',2),];
 
-#[derive(Debug, Default, PartialEq, Eq)]
+impl Default for CmdOptConf {
+    fn default() -> Self {
+        Self {
+            prog_name: String::new(),
+            flg_all: false,
+            opt_sort: OptSortOrder::default(),
+            opt_pid: 0,
+            opt_sleep: 10,
+            flg_cmdline: false,
+            flg_help: false,
+            flg_version: false,
+            opt_uc_x: Vec::new(),
+            arg_params: Vec::new(),
+        }
+    }
+}
+#[derive(Debug, PartialEq, Eq)]
 pub struct CmdOptConf {
     pub prog_name: String,
     //
