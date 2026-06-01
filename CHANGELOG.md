@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * refactored configuration helper methods in `src/conf/mod.rs` to use idiomatic iterator-based approaches for better readability.
 * cleaned up commented-out code in `src/run.rs` and `src/conf/mod.rs`.
 * enabled and fixed tests in `src/util/opt_uc_x_param.rs`.
+* added explicit `flush()` with error handling to `LineWriter` usage in `src/run.rs` to ensure all output is written.
 
 
 ## [0.3.2] (2026-05-26)

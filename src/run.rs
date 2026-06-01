@@ -127,6 +127,8 @@ fn do_proc_out_list(
         )?;
     }
     //
+    wrt.flush().context("Failed to flush output")?;
+    //
     Ok(())
 }
 
@@ -208,5 +210,6 @@ fn do_proc_out_one(_conf: &CmdOptConf, rec: &ProcsRec, wrt: &mut dyn Write) -> a
         rec.total.to_formatted_string(&Locale::en),
         rec.command
     )?;
+    wrt.flush().context("Failed to flush output")?;
     Ok(())
 }
