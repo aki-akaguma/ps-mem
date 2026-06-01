@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+
+## [0.3.3] (2026-06-01)
 ### Added
 * conducted a comprehensive code review and documented findings in `docs/reviews/2026-06-01_code_review.3.md`.
 
@@ -18,7 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * enabled and fixed tests in `src/util/opt_uc_x_param.rs`.
 * added explicit `flush()` with error handling to `LineWriter` usage in `src/run.rs` to ensure all output is written.
 * fixed clippy warning `clippy::field_reassign_with_default` in `src/conf/parse.rs`.
-
 
 ## [0.3.2] (2026-05-26)
 ### Changed
@@ -283,7 +285,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 0.1.0 (2019-11-02)
 * first commit
 
-[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.2..HEAD
+[Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.3..HEAD
+[0.3.3]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.2..v0.3.3
 [0.3.2]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.1..v0.3.2
 [0.3.1]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.0..v0.3.1
 [0.3.0]: https://github.com/aki-akaguma/ps-mem/compare/v0.2.15..v0.3.0

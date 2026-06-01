@@ -1,6 +1,6 @@
 [package]
 name = "ps-mem"
-version = "0.3.2"
+version = "0.3.3"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 description = """
 The process memory size listing

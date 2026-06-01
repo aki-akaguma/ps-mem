@@ -72,9 +72,9 @@ checksum = "0ac02996cf32aa04f5ad02dc43a03e1cea4795978b0e2049e9dff8bd94e399e2"
 
 [[package]]
 name = "flood-tide"
-version = "0.2.14"
+version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22e1bfc1fa66989390d95fe32069cc795122fc60f320bcf3cd09406783119b88"
+checksum = "de06b6ef3293a3e3453777a096efbc9f676329c488cb0fd776790cc7faa0a8e0"
 
 [[package]]
 name = "flood-tide-gen"
@@ -116,9 +116,9 @@ checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
 
 [[package]]
 name = "linux-procfs"
-version = "0.4.2"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7451a2acd7b8b44ac248286cdea334e592db7be6d619fde7d2f5b2b14804ad5"
+checksum = "452fb5e43e9772dfe0889015a0dbe38eb67fb13b7e0f6703b0111868231e1165"
 dependencies = [
  "cfg-iif",
  "memx",
@@ -127,15 +127,15 @@ dependencies = [
 
 [[package]]
 name = "memchr"
-version = "2.8.0"
+version = "2.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
+checksum = "6b947ae49db0d222b1dbc6b113ce7248a3fc3a6ca21b696717bfc000ba4484d8"
 
 [[package]]
 name = "memx"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1eb28f70ca75d62feda5053240b87d490c70db5cea7b3103413370dd4f9fdb5"
+checksum = "b34799f4a1d8693a53c36c100211735052ea2193eabdd03c3aa304319a39978c"
 dependencies = [
  "cpufeatures",
  "rustversion",
@@ -143,9 +143,9 @@ dependencies = [
 
 [[package]]
 name = "naive_opt"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e39d51f11c24e9ec467eef3efea563e25d65d4aebe58041be3b1bd1dbc076864"
+checksum = "48f7265bd7949d6585bdae459a2bda3d1bf5309843d6c6e37356eddc8db96ffd"
 dependencies = [
  "memx",
 ]
@@ -162,7 +162,7 @@ dependencies = [
 
 [[package]]
 name = "ps-mem"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "anyhow",
  "assert-text",
@@ -208,9 +208,9 @@ checksum = "dc897dd8d9e8bd1ed8cdad82b5966c3e0ecae09fb1907d58efaa013543185d0a"
 
 [[package]]
 name = "runnel"
-version = "0.4.2"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce95ec9ff97e5dc9ac5855694406e9878b2b7540d47318dae2f06c6c6fa36441"
+checksum = "7255aeb27487ff946adff4fd5cbc0ace7a6dcb613937f09b7372cb63bcbdad86"
 
 [[package]]
 name = "rust-version-info-file"
