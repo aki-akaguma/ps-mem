@@ -2,288 +2,289 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-06-01
 
-## [0.3.3] (2026-06-01)
 ### Added
-* conducted a comprehensive code review and documented findings in `docs/reviews/2026-06-01_code_review.3.md`.
+- Document comprehensive code review findings in `docs/reviews/2026-06-01_code_review.3.md`
 
 ### Changed
-* reorganized and renamed previous code review files into `docs/reviews/` directory for better traceability.
-* refactored `do_proc_in` in `src/run.rs` to use safe error handling instead of `unwrap()`, improving robustness against process state changes.
-* improved error message for PID type conversion in `do_proc_invoke` for better clarity.
-* refactored configuration helper methods in `src/conf/mod.rs` to use idiomatic iterator-based approaches for better readability.
-* cleaned up commented-out code in `src/run.rs` and `src/conf/mod.rs`.
-* enabled and fixed tests in `src/util/opt_uc_x_param.rs`.
-* added explicit `flush()` with error handling to `LineWriter` usage in `src/run.rs` to ensure all output is written.
-* fixed clippy warning `clippy::field_reassign_with_default` in `src/conf/parse.rs`.
-
-## [0.3.2] (2026-05-26)
-### Changed
-* update crate: linux-procfs(0.4.2), signal-hook(0.4.4)
+- Reorganize and rename previous code review files into `docs/reviews/` directory for better traceability
+- Refactor `do_proc_in` in `src/run.rs` to use safe error handling instead of `unwrap()`, improving robustness against process state changes
+- Improve error message for PID type conversion in `do_proc_invoke` for better clarity
+- Refactor configuration helper methods in `src/conf/mod.rs` to use idiomatic iterator-based approaches for better readability
+- Clean up commented-out code in `src/run.rs` and `src/conf/mod.rs`
+- Enable tests in `src/util/opt_uc_x_param.rs`
+- Include explicit `flush()` with error handling to `LineWriter` usage in `src/run.rs` to ensure all output is written
 
 ### Fixed
-* bug: `CmdOptConf::base_dir()`: default base directory must be "/"
+- Address clippy warning `clippy::field_reassign_with_default` in `src/conf/parse.rs`
+- Resolve integration tests in `src/util/opt_uc_x_param.rs`
 
-## [0.3.1] (2026-05-20)
+## [0.3.2] - 2026-05-26
+
 ### Changed
-* simplified sorting logic in `src/run.rs` using tuple comparison for better readability.
-* refactored process data gathering in `do_proc_in` using functional iterators (`filter_map`, `collect`).
-* improved error handling in `do_proc_invoke` to return `anyhow::Result` instead of panicking on command start failure.
-* used safe PID type conversion from `u32` to `i32` in `do_proc_invoke`.
-* clarified `sioe` (Standard Input/Output/Error streams) definition in `src/lib.rs` documentation.
-* clarified the intent of the default 10ms sleep interval in `src/conf/parse.rs`.
-* update crate: flood-tide(0.2.14), flood-tide-gen(0.2.2)
-* rustc(1.71.0) on `.github/workflows/test-windows.yml`
-* update crate: runnel(0.4.2), regex(1.12)
-* minimum support rustc 1.68.0 (2c8cc3432 2023-03-06)
+- Update dependencies: `linux-procfs` (0.4.2), `signal-hook` (0.4.4)
 
 ### Fixed
-* `clippy::needless_borrow`
-* `clippy::derivable_impls`
-* `clippy::unnecessary_sort_by`
+- Address default base directory in `CmdOptConf::base_dir()` (must be `/`)
+
+## [0.3.1] - 2026-05-20
+
+### Changed
+- Simplify sorting logic in `src/run.rs` using tuple comparison for better readability
+- Refactor process data gathering in `do_proc_in` using functional iterators (`filter_map`, `collect`)
+- Improve error handling in `do_proc_invoke` to return `anyhow::Result` instead of panicking on command start failure
+- Use safe PID type conversion from `u32` to `i32` in `do_proc_invoke`
+- Clarify `sioe` (Standard Input/Output/Error streams) definition in `src/lib.rs` documentation
+- Clarify the intent of the default 10ms sleep interval in `src/conf/parse.rs`
+- Update dependencies: `flood-tide` (0.2.14), `flood-tide-gen` (0.2.2), `runnel` (0.4.2), `regex` (1.12)
+- Update `rustc` version to 1.71.0 in `.github/workflows/test-windows.yml`
+- Set minimum supported Rust version to 1.68.0
+
+### Fixed
+- Address clippy warning `clippy::needless_borrow`
+- Address clippy warning `clippy::derivable_impls`
+- Address clippy warning `clippy::unnecessary_sort_by`
 
 ### Removed
-* `memx-cdy`
+- `memx-cdy` dependency
 
-## [0.3.0] (2025-09-15)
+## [0.3.0] - 2025-09-15
+
 ### Added
-* `specs`
+- Project specifications in `specs` directory
 
 ### Changed
-* `IntoIterator` compatibility for args in `execute()`
-* updated: runnel(0.4.0)
-* updated: rust-version-info-file(0.2)
+- Implement `IntoIterator` compatibility for arguments in `execute()`
+- Update dependencies: `runnel` (0.4.0), `rust-version-info-file` (0.2)
 
 ### Fixed
-* minimum support version in doc
+- Correct minimum supported version in documentation
 
 ### Removed
-* `execute_env()`
+- `execute_env()` function
 
-## [0.2.15] (2024-06-19)
+## [0.2.15] - 2024-06-19
+
 ### Changed
-* test and build support 1.65.0 on github workflows
-* rust-version = "1.60.0"
+- Support Rust 1.65.0 in GitHub workflows
+- Set `rust-version = "1.60.0"` in `Cargo.toml`
 
-## [0.2.14] (2024-06-19)
+## [0.2.14] - 2024-06-19
+
 ### Added
-* `.github/workflows/test-ubuntu.yml`
-* `.github/workflows/test-macos.yml`
-* `.github/workflows/test-windows.yml`
-* test status badges into `README.tpl`
-* test-helper into `workspace`
-* miri supports on tests
-* `tarpaulin` supports into `Makefile`
+- GitHub Actions workflows: `test-ubuntu.yml`, `test-macos.yml`, and `test-windows.yml`
+- Include test status badges in `README.tpl`
+- Include `test-helper` in the workspace
+- Miri support for tests
+- Tarpaulin support in `Makefile`
 
 ### Changed
-* rename: `config` to `config.toml`
-* refactored `Makefile`
-* update depends: anyhow(1.0.86)
-* update depends: flood-tide(0.2.11), flood-tide-gen(0.1.22)
-* update depends: linux-procfs(0.3.16)
-* update depends: memx-cdy(0.1.13), runnel(0.3.19)
-* update depends: assert-text(0.2.10), exec-taget(0.2.9), rust-version-info-file(0.1.10)
-* update depends: indoc(2.0.5)
+- Rename `config` to `config.toml`
+- Refactor `Makefile`
+- Update dependencies: `anyhow` (1.0.86), `flood-tide` (0.2.11), `flood-tide-gen` (0.1.22), `linux-procfs` (0.3.16), `memx-cdy` (0.1.13), `runnel` (0.3.19), `assert-text` (0.2.10), `exec-target` (0.2.9), `rust-version-info-file` (0.1.10), `indoc` (2.0.5)
 
 ### Removed
-* `COPYING`
+- `COPYING` file
 
 ### Fixed
-* `LICENSE-APACHE`, `LICENSE-MIT`
-* clippy: `redundant_static_lifetimes`, `needless_borrow`, `bool_assert_comparison`
-* clippy: `uninlined_format_args`, `unused_imports`
-* rust-version: "1.56.0" to "1.58.0"
+- Correct `LICENSE-APACHE` and `LICENSE-MIT` files
+- Address clippy warnings: `redundant_static_lifetimes`, `needless_borrow`, `bool_assert_comparison`, `uninlined_format_args`, `unused_imports`
+- Set `rust-version` to "1.58.0" (from "1.56.0")
 
-## [0.2.13] (2023-01-11)
+## [0.2.13] - 2023-01-11
+
 ### Added
-* badges into `README.tpl`
-* rust-version = "1.56.0" into Cargo.toml
+- Badges in `README.tpl`
+- `rust-version = "1.56.0"` in `Cargo.toml`
 
 ### Changed
-* reformat `CHANGELOG.md`
-* update depends: anyhow(1.0.68)
-* update depends: flood-tide(0.2.8), flood-tide-gen(0.1.19)
-* update depends: memx-cdy(0.1.10), runnel(0.3.15)
-* update depends: regex(1.7.1)
-* update depends: linux-procfs(0.3.13)
-* update depends: num-format(0.4.4), signal-hook(0.3.14)
+- Reformat `CHANGELOG.md`
+- Update dependencies: `anyhow` (1.0.68), `flood-tide` (0.2.8), `flood-tide-gen` (0.1.19), `memx-cdy` (0.1.10), `runnel` (0.3.15), `regex` (1.7.1), `linux-procfs` (0.3.13), `num-format` (0.4.4), `signal-hook` (0.3.14)
 
 ### Fixed
-* clippy: needless_borrow
-* clippy: uninlined_format_args
+- Address clippy warnings: `needless_borrow`, `uninlined_format_args`
 
-## [0.2.12] (2022-09-04)
+## [0.2.12] - 2022-09-04
+
 ### Added
-* total sum print
+- Total sum output printing
 
 ### Changed
-* update depends: flood-tide-gen(0.1.17)
-* update depends: anyhow(1.0.63), libc(0.2.132), regex(1.6.0)
-* update depends: semver(1.0.13)
+- Update dependencies: `flood-tide-gen` (0.1.17), `anyhow` (1.0.63), `libc` (0.2.132), `regex` (1.6.0), `semver` (1.0.13)
 
 ### Fixed
-* clippy: you are deriving `PartialEq` and can implement `Eq`
+- Address clippy warning: derived `PartialEq` should also implement `Eq`
 
-## [0.2.11] (2022-06-18)
+## [0.2.11] - 2022-06-18
+
 ### Changed
-* changes to edition 2021
-* update depends: cfg-iif(0.2.3), flood-tide(0.2.5), linux-procfs(0.3.11)
-* update depends: memx(0.1.21), memx-cdy(0.1.8), naive_opt(0.1.18), runnel(0.3.11)
-* update depends: assert-text(0.2.6), exec-target(v0.2.6), flood-tide-gen(0.1.16)
-* update depends: rust-version-info-file(v0.1.6)
-* update depends: semver(1.0.10)
+- Update project to Edition 2021
+- Update dependencies: `cfg-iif` (0.2.3), `flood-tide` (0.2.5), `linux-procfs` (0.3.11), `memx` (0.1.21), `memx-cdy` (0.1.8), `naive_opt` (0.1.18), `runnel` (0.3.11), `assert-text` (0.2.6), `exec-target` (0.2.6), `flood-tide-gen` (0.1.16), `rust-version-info-file` (0.1.6), `semver` (1.0.10)
 
-## [0.2.10] (2022-05-31)
+## [0.2.10] - 2022-05-31
+
 ### Added
-* command option: `-l, --cmdline` view command line
+- Command line view option: `-l, --cmdline`
 
-## [0.2.9] (2022-05-22)
+## [0.2.9] - 2022-05-22
+
 ### Changed
-* update depends: runnel(0.3.10), memx(0.1.20)
-* update depends: anyhow(1.0.57), libc(0.2.126), regex(1.5.6)
-* update depends: signal-hook(0.3.14)
-* update depends: exec-target(v0.2.5), rust-version-info-file(v0.1.5)
+- Update dependencies: `runnel` (0.3.10), `memx` (0.1.20), `anyhow` (1.0.57), `libc` (0.2.126), `regex` (1.5.6), `signal-hook` (0.3.14), `exec-target` (0.2.5), `rust-version-info-file` (0.1.5)
 
-## [0.2.8] (2021-11-15)
+## [0.2.8] - 2021-11-15
+
 ### Added
-* more documents
+- Comprehensive documentation
 
 ### Changed
-* minimum support rustc 1.47.0 (18bf6b4f0 2020-10-07)
-* update depends: flood-tide(0.2.4), linux-procfs(0.3.10), cfg-iif(0.2.2), memx(0.1.18), memx-cdy(0.1.7), naive_opt(0.1.16), runnel(0.3.9)
-* update depends: assert-text(0.2.59), exec-target(0.2.4), flood-tide-gen(0.1.15)
-* update depends: anyhow(1.0.45), libc(0.2.107)
+- Set minimum supported Rust version to 1.47.0
+- Update dependencies: `flood-tide` (0.2.4), `linux-procfs` (0.3.10), `cfg-iif` (0.2.2), `memx` (0.1.18), `memx-cdy` (0.1.7), `naive_opt` (0.1.16), `runnel` (0.3.9), `assert-text` (0.2.59), `exec-target` (0.2.4), `flood-tide-gen` (0.1.15), `anyhow` (1.0.45), `libc` (0.2.107)
 
-## [0.2.7] (2021-09-11)
+## [0.2.7] - 2021-09-11
+
 ### Changed
-* pass cargo clippy
-* update depends: anyhow(1.0.43), flood-tide-gen(0.1.14), flood-tide(0.2.3), memx-cdy(0.1.6), runnel(0.3.8)
-* update depends: signal-hook(0.3.10), linux-procfs(0.3.9)
+- Pass `cargo clippy` checks
+- Update dependencies: `anyhow` (1.0.43), `flood-tide-gen` (0.1.14), `flood-tide` (0.2.3), `memx-cdy` (0.1.6), `runnel` (0.3.8), `signal-hook` (0.3.10), `linux-procfs` (0.3.9)
 
-## [0.2.6] (2021-07-21)
+## [0.2.6] - 2021-07-21
+
 ### Added
-* depends: indoc(1.0.3)
+- Dependency: `indoc` (1.0.3)
 
 ### Changed
-* update depends: linux-procfs(0.3.7), memx-cdy(0.1.4)
-* update depends: memx(0.1.14), naive_opt(0.1.13)
-* update depends: anyhow(1.0.42)
+- Update dependencies: `linux-procfs` (0.3.7), `memx-cdy` (0.1.4), `memx` (0.1.14), `naive_opt` (0.1.13), `anyhow` (1.0.42)
 
 ### Fixed
-* bug: conf.opt_sleep: default sleep msec is more zero
+- Resolve issue in `conf.opt_sleep`: default sleep msec should be greater than zero
 
-## [0.2.5] (2021-07-03)
-### Changed
-* to github.com
+## [0.2.5] - 2021-07-03
 
-## 0.2.4 (2021-07-03)
 ### Changed
-* update depends: linux-procfs(0.3.6)
-* rewite TARGET_EXE_PATH with `env!(concat!("CARGO_BIN_EXE_", env!("CARGO_PKG_NAME")))`
-* update depends: assert-text(0.2.4), exec-target(0.2.3)
-* minimum support rustc 1.46.0 (04488afe3 2020-08-24)
+- Migrate project to GitHub
+
+## [0.2.4] - 2021-07-03
+
+### Changed
+- Update `linux-procfs` (0.3.6)
+- Rewrite `TARGET_EXE_PATH` using `env!(concat!("CARGO_BIN_EXE_", env!("CARGO_PKG_NAME")))`
+- Update dependencies: `assert-text` (0.2.4), `exec-target` (0.2.3)
+- Set minimum supported Rust version to 1.46.0
 
 ### Removed
-* remove util::my_matches!()
-* remove depends: rustc_version
+- `util::my_matches!()` macro
+- `rustc_version` dependency
 
-## 0.2.3 (2021-06-26)
+## [0.2.3] - 2021-06-26
+
 ### Added
-* `memx_cdy::memx_init(); // fast mem operation.`
+- `memx_cdy::memx_init()` for fast memory operations
 
 ### Changed
-* update depends: cfg-iif(0.2.0)
-* rewite TARGET_EXE_PATH with `env!("CARGO_BIN_EXE_ps-mem")`
+- Update `cfg-iif` (0.2.0)
+- Rewrite `TARGET_EXE_PATH` using `env!("CARGO_BIN_EXE_ps-mem")`
 
 ### Fixed
-* bug: `#[cfg(feature = "debian_build")]`
+- Support for `#[cfg(feature = "debian_build")]`
 
-## 0.2.2 (2021-06-06)
+## [0.2.2] - 2021-06-06
+
 ### Added
-* support `features = \["debian_build"\]`
+- Support for `features = ["debian_build"]`
 
 ### Changed
-* update depends: flood-tide-gen(0.1.13), flood-tide(0.2.2)
-* update depends: rust-version-info-file(0.1.2)
+- Update dependencies: `flood-tide-gen` (0.1.13), `flood-tide` (0.2.2), `rust-version-info-file` (0.1.2)
 
 ### Fixed
-* bug: command option: -X rust-version-info
+- Address issue with command option: `-X rust-version-info`
 
-## 0.2.1 (2021-04-23)
+## [0.2.1] - 2021-04-23
+
 ### Changed
-* update depends: flood-tide-gen(0.1.12), flood-tide(0.2.1)
-* update depends: bug fix: regex(1.4.6)
+- Update dependencies: `flood-tide-gen` (0.1.12), `flood-tide` (0.2.1)
+- Resolve bug in `regex` (1.4.6)
 
-## 0.2.0 (2021-04-06)
+## [0.2.0] - 2021-04-06
+
 ### Added
-* `runnel` and `anyhow`
+- `runnel` and `anyhow` dependencies
 
 ### Changed
-* change from optpa-util-1 to flood-tide
-* update depends: rustc_version(0.3)
+- Switch from `optpa-util-1` to `flood-tide`
+- Update `rustc_version` (0.3)
 
-## 0.1.9 (2021-04-05)
+## [0.1.9] - 2021-04-05
+
 ### Changed
-* update depends: signal-hook(0.3)
+- Update `signal-hook` (0.3)
 
 ### Fixed
-* fix clippy warning
+- Address clippy warnings
 
-## 0.1.8 (2020-12-29)
+## [0.1.8] - 2020-12-29
+
 ### Changed
-* update crates
+- Update internal crates
 
 ### Removed
-* remove optpaerr-1
+- `optpaerr-1` dependency
 
-## 0.1.7 (2020-11-17)
+## [0.1.7] - 2020-11-17
+
 ### Added
-* `README.md`, `COPYING`, `LICENSE-APACHE`, `LICENSE-MIT`
+- `README.md`, `COPYING`, `LICENSE-APACHE`, and `LICENSE-MIT` files
 
 ### Changed
-* change optpa_util to optpa_util_1
-* update crates
+- Switch from `optpa_util` to `optpa_util_1`
+- Update internal crates
 
 ### Fixed
-* fix old version: rustc_version(=0.2.3), v0.3.0 is not compile new semver on deb10-buster
+- Pin `rustc_version` to 0.2.3 to avoid compilation issues with new `semver` on Debian 10 Buster
 
-## 0.1.6 (2020-10-19)
+## [0.1.6] - 2020-10-19
+
 ### Changed
-* modify invoke one process output format
-* update crates
+- Adjust output format for single process invocation
+- Update internal crates
 
-## 0.1.5 (2020-10-09)
+## [0.1.5] - 2020-10-09
+
 ### Added
-* command invoking
-* command option: `--pid`
+- Command invocation support
+- Command option: `--pid`
 
 ### Changed
-* update crates
+- Update internal crates
 
-## 0.1.4 (2020-10-08)
+## [0.1.4] - 2020-10-08
+
 ### Added
-* command option: `--all`
+- Command option: `--all`
 
 ### Changed
-* update crates
+- Update internal crates
 
-## 0.1.3 (2020-10-06)
+## [0.1.3] - 2020-10-06
+
 ### Changed
-* chg: pid +1 columns, kB to Ki
-* update crates
+- Expand PID column by 1 and change unit from KB to Ki
+- Update internal crates
 
-## 0.1.2 (2020-08-09)
+## [0.1.2] - 2020-08-09
+
 ### Changed
-* update crates
-* a lot of things
+- Update internal crates
+- Miscellaneous improvements
 
-## 0.1.0 (2019-11-02)
-* first commit
+## [0.1.0] - 2019-11-02
+
+### Added
+- Initial release
 
 [Unreleased]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.3..HEAD
 [0.3.3]: https://github.com/aki-akaguma/ps-mem/compare/v0.3.2..v0.3.3
