@@ -1,5 +1,4 @@
 # Changelog: ps-mem
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
@@ -22,8 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Include explicit `flush()` with error handling to `LineWriter` usage in `src/run.rs` to ensure all output is written
 
 ### Fixed
-- Address clippy warning `clippy::field_reassign_with_default` in `src/conf/parse.rs`
-- Resolve integration tests in `src/util/opt_uc_x_param.rs`
+- Resolve `clippy::field_reassign_with_default` warning in `src/conf/parse.rs`
+- Correct integration tests in `src/util/opt_uc_x_param.rs`
 
 ## [0.3.2] - 2026-05-26
 
@@ -31,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update dependencies: `linux-procfs` (0.4.2), `signal-hook` (0.4.4)
 
 ### Fixed
-- Address default base directory in `CmdOptConf::base_dir()` (must be `/`)
+- Set default base directory to `/` in `CmdOptConf::base_dir()`
 
 ## [0.3.1] - 2026-05-20
 
@@ -41,15 +40,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve error handling in `do_proc_invoke` to return `anyhow::Result` instead of panicking on command start failure
 - Use safe PID type conversion from `u32` to `i32` in `do_proc_invoke`
 - Clarify `sioe` (Standard Input/Output/Error streams) definition in `src/lib.rs` documentation
-- Clarify the intent of the default 10ms sleep interval in `src/conf/parse.rs`
+- Clarify intent of default 10ms sleep interval in `src/conf/parse.rs`
 - Update dependencies: `flood-tide` (0.2.14), `flood-tide-gen` (0.2.2), `runnel` (0.4.2), `regex` (1.12)
 - Update `rustc` version to 1.71.0 in `.github/workflows/test-windows.yml`
 - Set minimum supported Rust version to 1.68.0
 
 ### Fixed
-- Address clippy warning `clippy::needless_borrow`
-- Address clippy warning `clippy::derivable_impls`
-- Address clippy warning `clippy::unnecessary_sort_by`
+- Resolve `clippy::needless_borrow` warning
+- Resolve `clippy::derivable_impls` warning
+- Resolve `clippy::unnecessary_sort_by` warning
 
 ### Removed
 - `memx-cdy` dependency
@@ -201,7 +200,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update dependencies: `flood-tide-gen` (0.1.13), `flood-tide` (0.2.2), `rust-version-info-file` (0.1.2)
 
 ### Fixed
-- Address issue with command option: `-X rust-version-info`
+- Support for command option: `-X rust-version-info`
 
 ## [0.2.1] - 2021-04-23
 
